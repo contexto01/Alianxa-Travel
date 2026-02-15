@@ -1,0 +1,99 @@
+---
+const packages = [
+  {
+    name: 'Panamá',
+    country: 'Panamá',
+    duration: '5 días / 4 noches',
+    price: 899,
+    image: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=600&q=80&auto=format&fit=crop',
+    whatsapp: 'Quiero%20el%20paquete%20a%20Panam%C3%A1%20(5d%2F4n)%20desde%20%24899%20USD',
+  },
+  {
+    name: 'San Andrés',
+    country: 'Colombia',
+    duration: '4 días / 3 noches',
+    price: 749,
+    image: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=600&q=80&auto=format&fit=crop',
+    whatsapp: 'Quiero%20el%20paquete%20a%20San%20Andr%C3%A9s%20(4d%2F3n)%20desde%20%24749%20USD',
+  },
+  {
+    name: 'Punta Cana',
+    country: 'Rep. Dominicana',
+    duration: '7 días / 6 noches',
+    price: 1299,
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80&auto=format&fit=crop',
+    whatsapp: 'Quiero%20el%20paquete%20a%20Punta%20Cana%20(7d%2F6n)%20desde%20%241299%20USD',
+  },
+];
+---
+
+<section id="paquetes" class="py-20 lg:py-28 bg-brand-red relative overflow-hidden">
+  <!-- Background texture -->
+  <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M0 40L40 0H20L0 20M40 40V20L20 40\'/%3E%3C/g%3E%3C/svg%3E');"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    <div class="text-center mb-14 reveal">
+      <span class="inline-block px-4 py-1.5 bg-white/20 text-white text-sm font-bold rounded-full mb-4">
+        🔥 Paquetes imperdibles
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4">
+        Ofertas que no puedes dejar pasar
+      </h2>
+      <p class="text-white/75 text-lg">Reserva hoy y vive la aventura de tu vida</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      {packages.map((pkg, i) => (
+        <div
+          class="bg-white rounded-2xl overflow-hidden shadow-xl card-hover reveal"
+          style={`transition-delay: ${i * 100}ms`}
+        >
+          <!-- Image -->
+          <div class="relative h-52 overflow-hidden">
+            <img
+              src={pkg.image}
+              alt={`Paquete a ${pkg.name}`}
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <span class="absolute top-3 right-3 bg-brand-yellow text-brand-dark text-xs font-black px-3 py-1 rounded-full badge-pulse">
+              ¡Oferta!
+            </span>
+          </div>
+
+          <!-- Content -->
+          <div class="p-5">
+            <h3 class="text-xl font-black text-brand-dark mb-1">{pkg.name}</h3>
+            <p class="text-gray-400 text-sm flex items-center gap-1 mb-3">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+              {pkg.duration}
+            </p>
+            <div class="flex items-baseline gap-1 mb-5">
+              <span class="text-sm text-gray-500 font-medium">Desde</span>
+              <span class="text-4xl font-black text-brand-red">${pkg.price}</span>
+              <span class="text-sm text-gray-400 font-medium">USD</span>
+            </div>
+            <a
+              href={`https://wa.me/573001234567?text=${pkg.whatsapp}`}
+              target="_blank"
+              rel="noopener"
+              class="block w-full py-3 bg-brand-dark text-white text-center font-bold rounded-xl hover:bg-brand-blue transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+            >
+              Reservar ahora →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA below -->
+    <div class="text-center mt-12 reveal">
+      <p class="text-white/80 text-sm mb-4">¿Buscas otro destino? Tenemos más de 50 opciones para ti.</p>
+      <a href="#cotizar" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-brand-red font-black rounded-full hover:bg-gray-50 hover:scale-105 transition-all duration-300 shadow-lg">
+        ✈️ Cotizar paquete personalizado
+      </a>
+    </div>
+  </div>
+</section>

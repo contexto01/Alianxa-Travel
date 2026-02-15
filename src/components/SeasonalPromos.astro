@@ -1,0 +1,134 @@
+---
+const promos = [
+  {
+    name: 'París',
+    country: 'Francia',
+    price: 1899,
+    image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80&auto=format&fit=crop',
+    includes: ['Vuelo ida y vuelta', 'Hotel 4 estrellas', 'Desayunos incluidos', 'Tour por la ciudad', 'Traslados aeropuerto'],
+    badge: 'Europa',
+    badgeColor: 'bg-indigo-600',
+    wa: 'Quiero%20el%20paquete%20a%20Par%C3%ADs%20desde%20%241899%20USD',
+  },
+  {
+    name: 'Tokio',
+    country: 'Japón',
+    price: 2499,
+    image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80&auto=format&fit=crop',
+    includes: ['Vuelo ida y vuelta', 'Hotel céntrico', 'Desayunos japoneses', 'JR Pass 7 días', 'Guía en español'],
+    badge: 'Asia',
+    badgeColor: 'bg-rose-600',
+    wa: 'Quiero%20el%20paquete%20a%20Tokio%20desde%20%242499%20USD',
+  },
+  {
+    name: 'Nueva York',
+    country: 'Estados Unidos',
+    price: 1699,
+    image: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&q=80&auto=format&fit=crop',
+    includes: ['Vuelo directo', 'Hotel en Manhattan', 'City Pass incluido', 'Tour Estatua de la Libertad', 'Traslados'],
+    badge: 'Norteamérica',
+    badgeColor: 'bg-blue-700',
+    wa: 'Quiero%20el%20paquete%20a%20Nueva%20York%20desde%20%241699%20USD',
+  },
+  {
+    name: 'Dubái',
+    country: 'Emiratos Árabes',
+    price: 2199,
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80&auto=format&fit=crop',
+    includes: ['Vuelo ida y vuelta', 'Hotel 5 estrellas', 'Media pensión', 'Safari por el desierto', 'Burj Khalifa ticket'],
+    badge: 'Medio Oriente',
+    badgeColor: 'bg-amber-600',
+    wa: 'Quiero%20el%20paquete%20a%20Dub%C3%A1i%20desde%20%242199%20USD',
+  },
+  {
+    name: 'Santorini',
+    country: 'Grecia',
+    price: 1599,
+    image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80&auto=format&fit=crop',
+    includes: ['Vuelo + Ferry', 'Hotel con vista al mar', 'Desayunos griegos', 'Tour de vinos', 'Paseo en catamarán'],
+    badge: 'Europa',
+    badgeColor: 'bg-sky-600',
+    wa: 'Quiero%20el%20paquete%20a%20Santorini%20desde%20%241599%20USD',
+  },
+  {
+    name: 'Bali',
+    country: 'Indonesia',
+    price: 1799,
+    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80&auto=format&fit=crop',
+    includes: ['Vuelo ida y vuelta', 'Villa privada', 'Desayunos balineses', 'Tour templos', 'Spa incluido'],
+    badge: 'Asia',
+    badgeColor: 'bg-emerald-600',
+    wa: 'Quiero%20el%20paquete%20a%20Bali%20desde%20%241799%20USD',
+  },
+];
+---
+
+<section id="promociones" class="py-20 lg:py-28 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-14 reveal">
+      <span class="inline-block px-4 py-1.5 bg-brand-yellow/20 text-yellow-700 text-sm font-bold rounded-full mb-4">
+        🌟 Promociones de temporada
+      </span>
+      <h2 class="section-title">Aprovecha nuestras<br /><span class="text-brand-blue">ofertas especiales</span></h2>
+      <p class="section-subtitle">Vive la aventura de tu vida con los mejores paquetes del mercado</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {promos.map((promo, i) => (
+        <article
+          class="bg-white rounded-2xl overflow-hidden shadow-card card-hover border border-gray-100 reveal"
+          style={`transition-delay: ${i * 80}ms`}
+        >
+          <!-- Image -->
+          <div class="relative h-52 overflow-hidden">
+            <img
+              src={promo.image}
+              alt={`Viaje a ${promo.name}, ${promo.country}`}
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute bottom-3 left-4 text-white">
+              <h3 class="font-black text-xl">{promo.name}</h3>
+              <p class="text-sm text-white/75">{promo.country}</p>
+            </div>
+            <span class={`absolute top-3 right-3 ${promo.badgeColor} text-white text-xs font-bold px-2.5 py-1 rounded-full`}>
+              {promo.badge}
+            </span>
+          </div>
+
+          <!-- Card body -->
+          <div class="p-5">
+            <div class="flex items-baseline gap-1 mb-4">
+              <span class="text-gray-400 text-sm">Desde</span>
+              <span class="text-3xl font-black text-brand-dark">${promo.price}</span>
+              <span class="text-gray-400 text-sm">USD por persona</span>
+            </div>
+
+            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Incluye:</p>
+            <ul class="space-y-1 mb-5">
+              {promo.includes.map(item => (
+                <li class="flex items-center gap-2 text-sm text-gray-600">
+                  <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href={`https://wa.me/573001234567?text=${promo.wa}`}
+              target="_blank"
+              rel="noopener"
+              class="block w-full py-3 bg-brand-yellow text-brand-dark text-center font-black rounded-xl hover:bg-yellow-400 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+            >
+              Reservar ahora ✈
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
