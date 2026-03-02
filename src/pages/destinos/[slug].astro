@@ -1,0 +1,226 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppFloat from '../../components/WhatsAppFloat.astro';
+
+export async function getStaticPaths() {
+  const destinos = await getCollection('destinos');
+  return destinos.map((destino) => ({
+    params: { slug: destino.slug },
+    props: { destino },
+  }));
+}
+
+type Props = {
+  destino: CollectionEntry<'destinos'>;
+};
+
+const { destino } = Astro.props;
+const { Content } = await destino.render();
+
+// Get related packages for this destination
+const paquetes = await getCollection('paquetes');
+const paquetesRelacionados = paquetes.filter(p => 
+  p.data.destinoSlug === destino.slug || 
+  p.data.nombre.toLowerCase().includes(destino.data.nombre.toLowerCase())
+).slice(0, 3);
+
+const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp}`;
+---
+
+<Layout
+  title={destino.data.seo.title}
+  description={destino.data.seo.description}
+  ogImage={destino.data.imagen}
+>
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img
+          src={destino.data.imagen}
+          alt={`${destino.data.nombre}, ${destino.data.pais}`}
+          class="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+      </div>
+
+      <div class="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white pt-24">
+        <span class="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full text-sm font-bold mb-4">
+          {destino.data.tagRegion || destino.data.pais}
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black mb-4 drop-shadow-lg">
+          {destino.data.nombre}
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 mb-2 font-medium">
+          {destino.data.pais}
+        </p>
+        <p class="text-lg md:text-xl text-white/75 mb-8 max-w-2xl mx-auto">
+          {destino.data.descripcion}
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center items-center">
+          <div class="bg-white/15 backdrop-blur-md rounded-2xl px-6 py-4 border border-white/20">
+            <p class="text-white/70 text-sm mb-1">Desde</p>
+            <p class="text-4xl font-black text-brand-yellow">${destino.data.precioDesde}</p>
+            <p class="text-white/60 text-sm">{destino.data.moneda} por persona</p>
+          </div>
+          <a
+            href={whatsappURL}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-emerald-500 text-white font-black text-lg rounded-full hover:bg-emerald-400 hover:scale-105 transition-all duration-300 shadow-xl"
+          >
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.535 5.845L0 24l6.335-1.533C8.049 23.455 9.982 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.807 0-3.496-.487-4.951-1.335l-.355-.21-3.76.91.951-3.659-.232-.375C2.49 15.583 2 13.848 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+            </svg>
+            {destino.data.cta.texto}
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#contenido" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/60 hover:text-white transition-colors scroll-bounce" aria-label="Ver más">
+        <span class="text-xs font-medium">Descubre más</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- Image Gallery (if available) -->
+    {destino.data.imagenes && destino.data.imagenes.length > 0 && (
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-3 gap-4">
+            {destino.data.imagenes.map((img: string, i: number) => (
+              <div class="rounded-2xl overflow-hidden h-64 shadow-card hover:shadow-card-hover transition-shadow duration-300">
+                <img
+                  src={img}
+                  alt={`${destino.data.nombre} - Imagen ${i + 1}`}
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Content Section -->
+    <section id="contenido" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <article class="prose prose-lg prose-headings:font-black prose-headings:text-brand-dark prose-p:text-gray-600 prose-a:text-brand-blue prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-dark prose-ul:text-gray-600 max-w-none">
+          <Content />
+        </article>
+      </div>
+    </section>
+
+    <!-- Related Packages -->
+    {paquetesRelacionados.length > 0 && (
+      <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-black text-brand-dark mb-4">
+              Paquetes disponibles
+            </h2>
+            <p class="text-gray-500 text-lg">
+              Elige el paquete perfecto para tu viaje a {destino.data.nombre}
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {paquetesRelacionados.map((paquete) => (
+              <div class="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2">
+                <div class="relative h-52 overflow-hidden">
+                  <img
+                    src={paquete.data.imagen}
+                    alt={paquete.data.nombre}
+                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                </div>
+                <div class="p-5">
+                  <h3 class="text-xl font-black text-brand-dark mb-1">{paquete.data.nombre}</h3>
+                  <p class="text-gray-400 text-sm flex items-center gap-1 mb-3">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                    </svg>
+                    {paquete.data.duracion}
+                  </p>
+                  <div class="flex items-baseline gap-1 mb-5">
+                    <span class="text-sm text-gray-500 font-medium">Desde</span>
+                    <span class="text-4xl font-black text-brand-red">${paquete.data.precio}</span>
+                    <span class="text-sm text-gray-400 font-medium">{paquete.data.moneda}</span>
+                  </div>
+                  <a
+                    href={`https://wa.me/573001234567?text=${paquete.data.whatsapp}`}
+                    target="_blank"
+                    rel="noopener"
+                    class="block w-full py-3 bg-brand-dark text-white text-center font-bold rounded-xl hover:bg-brand-blue transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                  >
+                    Reservar ahora →
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-brand-yellow">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-5xl mb-4">✈️</div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-brand-dark mb-4">
+          ¿Listo para viajar a {destino.data.nombre}?
+        </h2>
+        <p class="text-gray-700 text-lg mb-8">
+          Cotiza tu paquete personalizado ahora. Nuestro equipo te ayudará a planear el viaje perfecto.
+        </p>
+        <a
+          href={whatsappURL}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-3 px-10 py-5 bg-emerald-500 text-white font-black text-xl rounded-full hover:bg-emerald-400 hover:scale-105 transition-all duration-300 shadow-xl"
+        >
+          <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.535 5.845L0 24l6.335-1.533C8.049 23.455 9.982 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.807 0-3.496-.487-4.951-1.335l-.355-.21-3.76.91.951-3.659-.232-.375C2.49 15.583 2 13.848 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+          Cotizar viaje ahora
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppFloat />
+</Layout>
+
+<style>
+  .prose h2 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+  .prose h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+  }
+  .prose ul {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .prose p {
+    margin-bottom: 1.25em;
+  }
+</style>

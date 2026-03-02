@@ -1,30 +1,11 @@
 ---
-const packages = [
-  {
-    name: 'Panamá',
-    country: 'Panamá',
-    duration: '5 días / 4 noches',
-    price: 899,
-    image: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=600&q=80&auto=format&fit=crop',
-    whatsapp: 'Quiero%20el%20paquete%20a%20Panam%C3%A1%20(5d%2F4n)%20desde%20%24899%20USD',
-  },
-  {
-    name: 'San Andrés',
-    country: 'Colombia',
-    duration: '4 días / 3 noches',
-    price: 749,
-    image: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=600&q=80&auto=format&fit=crop',
-    whatsapp: 'Quiero%20el%20paquete%20a%20San%20Andr%C3%A9s%20(4d%2F3n)%20desde%20%24749%20USD',
-  },
-  {
-    name: 'Punta Cana',
-    country: 'Rep. Dominicana',
-    duration: '7 días / 6 noches',
-    price: 1299,
-    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80&auto=format&fit=crop',
-    whatsapp: 'Quiero%20el%20paquete%20a%20Punta%20Cana%20(7d%2F6n)%20desde%20%241299%20USD',
-  },
-];
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  paquetes: CollectionEntry<'paquetes'>[];
+}
+
+const { paquetes } = Astro.props;
 ---
 
 <section id="paquetes" class="py-20 lg:py-28 bg-brand-red relative overflow-hidden">
@@ -44,7 +25,7 @@ const packages = [
     </div>
 
     <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-      {packages.map((pkg, i) => (
+      {paquetes.map((paquete, i) => (
         <div
           class="bg-white rounded-2xl overflow-hidden shadow-xl card-hover reveal"
           style={`transition-delay: ${i * 100}ms`}
@@ -52,8 +33,8 @@ const packages = [
           <!-- Image -->
           <div class="relative h-52 overflow-hidden">
             <img
-              src={pkg.image}
-              alt={`Paquete a ${pkg.name}`}
+              src={paquete.data.imagen}
+              alt={`Paquete a ${paquete.data.nombre}`}
               class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               loading="lazy"
             />
@@ -65,18 +46,18 @@ const packages = [
 
           <!-- Content -->
           <div class="p-5">
-            <h3 class="text-xl font-black text-brand-dark mb-1">{pkg.name}</h3>
+            <h3 class="text-xl font-black text-brand-dark mb-1">{paquete.data.nombre}</h3>
             <p class="text-gray-400 text-sm flex items-center gap-1 mb-3">
               <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
-              {pkg.duration}
+              {paquete.data.duracion}
             </p>
             <div class="flex items-baseline gap-1 mb-5">
               <span class="text-sm text-gray-500 font-medium">Desde</span>
-              <span class="text-4xl font-black text-brand-red">${pkg.price}</span>
-              <span class="text-sm text-gray-400 font-medium">USD</span>
+              <span class="text-4xl font-black text-brand-red">${paquete.data.precio}</span>
+              <span class="text-sm text-gray-400 font-medium">{paquete.data.moneda}</span>
             </div>
             <a
-              href={`https://wa.me/573001234567?text=${pkg.whatsapp}`}
+              href={`https://wa.me/573001234567?text=${paquete.data.whatsapp}`}
               target="_blank"
               rel="noopener"
               class="block w-full py-3 bg-brand-dark text-white text-center font-bold rounded-xl hover:bg-brand-blue transition-all duration-300 hover:scale-[1.02] hover:shadow-md"

@@ -1,33 +1,11 @@
 ---
-const regions = [
-  {
-    name: 'Europa',
-    icon: '🏰',
-    desc: 'Descubre la magia de París, Roma, Barcelona, Amsterdam y más ciudades icónicas del viejo continente.',
-    destinations: ['París', 'Roma', 'Barcelona', 'Amsterdam', 'Lisboa'],
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=80&auto=format&fit=crop',
-    color: 'from-indigo-600 to-blue-700',
-    wa: 'Me%20interesa%20viajar%20a%20Europa',
-  },
-  {
-    name: 'Norteamérica',
-    icon: '🗽',
-    desc: 'Vive la energía de Nueva York, la magia de Cancún, la belleza de Miami y las maravillas naturales de Canadá.',
-    destinations: ['Nueva York', 'Cancún', 'Miami', 'Las Vegas', 'Toronto'],
-    image: 'https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=800&q=80&auto=format&fit=crop',
-    color: 'from-red-600 to-rose-700',
-    wa: 'Me%20interesa%20viajar%20a%20Norteam%C3%A9rica',
-  },
-  {
-    name: 'Sudamérica',
-    icon: '🌿',
-    desc: 'Explora la diversidad de Brasil, Argentina, Perú, Chile y Colombia. Cultura, naturaleza y gastronomía únicos.',
-    destinations: ['Río de Janeiro', 'Buenos Aires', 'Machu Picchu', 'Santiago', 'Cartagena'],
-    image: 'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80&auto=format&fit=crop',
-    color: 'from-emerald-600 to-green-700',
-    wa: 'Me%20interesa%20viajar%20a%20Sudam%C3%A9rica',
-  },
-];
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  regiones: CollectionEntry<'regiones'>[];
+}
+
+const { regiones } = Astro.props;
 ---
 
 <section class="py-20 lg:py-28 bg-white" aria-label="Destinos por región">
@@ -42,31 +20,31 @@ const regions = [
     </div>
 
     <div class="space-y-8">
-      {regions.map((region, i) => (
+      {regiones.slice(0, 3).map((region, i) => (
         <div
           class={`reveal grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-card card-hover ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}
         >
           <!-- Image -->
           <div class="relative h-64 lg:h-auto overflow-hidden">
             <img
-              src={region.image}
-              alt={`Destinos en ${region.name}`}
+              src={region.data.imagen}
+              alt={`Destinos en ${region.data.nombre}`}
               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               loading="lazy"
             />
-            <div class={`absolute inset-0 bg-gradient-to-br ${region.color} opacity-50`}></div>
+            <div class={`absolute inset-0 bg-gradient-to-br ${region.data.color} opacity-50`}></div>
             <div class="absolute inset-0 flex items-center justify-center">
-              <span class="text-6xl drop-shadow-2xl">{region.icon}</span>
+              <span class="text-6xl drop-shadow-2xl">{region.data.icon}</span>
             </div>
           </div>
 
           <!-- Content -->
           <div class="bg-white p-8 lg:p-10 flex flex-col justify-center">
-            <h3 class="text-2xl lg:text-3xl font-black text-brand-dark mb-3">{region.name}</h3>
-            <p class="text-gray-600 leading-relaxed mb-5">{region.desc}</p>
+            <h3 class="text-2xl lg:text-3xl font-black text-brand-dark mb-3">{region.data.nombre}</h3>
+            <p class="text-gray-600 leading-relaxed mb-5">{region.data.descripcion}</p>
 
             <div class="flex flex-wrap gap-2 mb-6">
-              {region.destinations.map(dest => (
+              {region.data.destinosDestacados.map((dest) => (
                 <span class="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-semibold rounded-full hover:bg-brand-yellow hover:text-brand-dark transition-colors cursor-default">
                   📍 {dest}
                 </span>
@@ -74,7 +52,7 @@ const regions = [
             </div>
 
             <a
-              href={`https://wa.me/573001234567?text=${region.wa}`}
+              href={`https://wa.me/573001234567?text=${region.data.whatsapp}`}
               target="_blank"
               rel="noopener"
               class="inline-flex items-center gap-2 self-start px-6 py-3 bg-brand-blue text-white font-bold rounded-full hover:bg-brand-dark hover:scale-105 transition-all duration-300 shadow-md"

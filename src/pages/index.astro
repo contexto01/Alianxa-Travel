@@ -1,16 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import WhyUs from '../components/WhyUs.astro';
-import Destinations from '../components/Destinations.astro';
-import Packages from '../components/Packages.astro';
-import SeasonalPromos from '../components/SeasonalPromos.astro';
-import Continental from '../components/Continental.astro';
-import CTA from '../components/CTA.astro';
-import Footer from '../components/Footer.astro';
-import WhatsAppFloat from '../components/WhatsAppFloat.astro';
-import '../styles/global.css';
+import { getCollection } from 'astro:content'
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Hero from '../components/Hero.astro'
+import WhyUs from '../components/WhyUs.astro'
+import Destinations from '../components/Destinations.astro'
+import Packages from '../components/Packages.astro'
+import SeasonalPromos from '../components/SeasonalPromos.astro'
+import Continental from '../components/Continental.astro'
+import CTA from '../components/CTA.astro'
+import Footer from '../components/Footer.astro'
+import WhatsAppFloat from '../components/WhatsAppFloat.astro'
+import '../styles/global.css'
+
+// Fetch content from collections
+const destinos = await getCollection('destinos')
+const paquetes = await getCollection('paquetes')
+const promociones = await getCollection('promociones')
+const regiones = await getCollection('regiones')
+
+// Filter for homepage
+const destinosDestacados = destinos.filter((d) => d.data.destacado).slice(0, 6)
+const paquetesImperdibles = paquetes.filter((p) => p.data.tipo === 'imperdible').slice(0, 3)
+const promocionesDestacadas = promociones.filter((p) => p.data.destacada).slice(0, 6)
 ---
 
 <Layout
@@ -21,10 +33,10 @@ import '../styles/global.css';
   <main>
     <Hero />
     <WhyUs />
-    <Destinations />
-    <Packages />
-    <SeasonalPromos />
-    <Continental />
+    <Destinations destinos={destinosDestacados} />
+    <Packages paquetes={paquetesImperdibles} />
+    <SeasonalPromos promociones={promocionesDestacadas} />
+    <Continental regiones={regiones} />
     <CTA />
   </main>
   <Footer />

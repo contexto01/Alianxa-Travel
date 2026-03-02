@@ -1,17 +1,17 @@
 ---
 export interface Props {
-  title?: string;
-  description?: string;
-  ogImage?: string;
+  title?: string
+  description?: string
+  ogImage?: string
 }
 
 const {
   title = 'Alianxa Travel | Tu mundo, tu viaje — Agencia de Viajes Colombia',
   description = 'Alianxa Travel, tu agencia de viajes en Colombia. Paquetes nacionales e internacionales, experiencias personalizadas a los mejores destinos del mundo. ¡Cotiza ahora!',
-  ogImage = '/og-image.jpg',
-} = Astro.props;
+  ogImage = '/Logo.webp'
+} = Astro.props
 
-const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : '';
+const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : ''
 ---
 
 <!doctype html>
@@ -20,7 +20,10 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : '';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="keywords" content="agencia de viajes, viajes Colombia, paquetes turísticos, viajes internacionales, vacaciones, Alianxa Travel, tours, ecoturismo" />
+    <meta
+      name="keywords"
+      content="agencia de viajes, viajes Colombia, paquetes turísticos, viajes internacionales, vacaciones, Alianxa Travel, tours, ecoturismo"
+    />
     <meta name="author" content="Alianxa Travel" />
     <meta name="robots" content="index, follow" />
     {canonicalURL && <link rel="canonical" href={canonicalURL} />}
@@ -40,8 +43,8 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : '';
     <meta name="twitter:image" content={ogImage} />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/Logo.webp" />
+    <link rel="icon" type="image/png" href="/Logo.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Structured Data -->
@@ -69,7 +72,10 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : '';
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,800&display=swap"
+      rel="stylesheet"
+    />
 
     <title>{title}</title>
   </head>
@@ -78,18 +84,18 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : '';
 
     <!-- Scroll reveal script -->
     <script>
-      const reveals = document.querySelectorAll('.reveal');
+      const reveals = document.querySelectorAll('.reveal')
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('active');
+              entry.target.classList.add('active')
             }
-          });
+          })
         },
         { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
-      );
-      reveals.forEach((el) => observer.observe(el));
+      )
+      reveals.forEach((el) => observer.observe(el))
     </script>
   </body>
 </html>
