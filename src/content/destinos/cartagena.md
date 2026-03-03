@@ -1,31 +1,92 @@
 ---
-nombre: "Cartagena"
-pais: "Colombia"
-region: "sudamerica"
-descripcion: "La ciudad amurallada más hermosa de América, con historia colonial, playas y gastronomía caribeña"
-precioDesde: 499
-moneda: "USD"
+nombre: 'Cartagena'
+pais: 'Colombia'
+region: 'caribe'
+descripcion: 'Historia, playas paradisíacas y experiencias exclusivas en la joya colonial del Caribe colombiano con plan todo incluido.'
+precioDesde: 599
+moneda: 'USD'
 destacado: true
-imagen: "https://images.unsplash.com/photo-1562327125-6db1e44e9ebb?w=800&q=80&auto=format&fit=crop"
-tagRegion: "Nacional"
+imagen: '/cartagenaIMG/playa1.webp'
+imagenes:
+  - '/cartagenaIMG/promocion.webp'
+  - '/cartagenaIMG/playa2.webp'
+  - '/cartagenaIMG/playa3.webp'
+tagRegion: 'Caribe Colombiano'
 seo:
-  title: "Viajes a Cartagena 2025 | Paquetes desde $499 — Alianxa Travel"
-  description: "Cartagena de Indias te espera. Ciudad amurallada, playas, islas del Rosario. Paquetes desde Colombia. ¡Descubre el Caribe colombiano!"
-  keywords: ["cartagena colombia", "ciudad amurallada", "islas del rosario"]
+  title: 'Viajes a Cartagena 2025 | Plan Todo Incluido desde $599 USD — Súper Promo'
+  description: 'Descubre Cartagena con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, cinco islas premium, Bora Bora y más. ¡Reserva ahora!'
+  keywords:
+    - 'viajes a cartagena'
+    - 'paquetes cartagena todo incluido'
+    - 'cartagena cinco islas premium'
+    - 'bora bora cartagena'
+    - 'ciudad amurallada cartagena'
 cta:
-  texto: "Cotizar viaje a Cartagena"
-  whatsapp: "Hola!%20Quiero%20cotizar%20un%20viaje%20a%20Cartagena"
+  texto: 'Quiero esta Súper Promo a Cartagena'
+  whatsapp: 'Hola!%20Quiero%20información%20de%20la%20Súper%20Promo%20a%20Cartagena%20🏝️✈️'
 ---
 
-## La Heroica
+## 🇨🇴 SÚPER PROMO CARTAGENA 🇨🇴
 
-Cartagena de Indias es la joya del Caribe colombiano. Su **centro histórico amurallado** es Patrimonio de la Humanidad, con calles empedradas, balcones floridos y arquitectura colonial impecable.
+### 🏝️ 4 DÍAS · 3 NOCHES · PLAN TODO INCLUIDO
 
-### Experiencias
+🔥 **Desde USD 599 por persona** 🔥
 
-- 🏰 Ciudad Amurallada y Castillo San Felipe
-- 🏖️ Islas del Rosario y Playa Blanca  
-- 🎭 Gastronomía caribeña y vida nocturna
-- 🚤 Tour en chiva y paseo en lancha
+Vive la magia de **Cartagena de Indias**, la joya colonial del Caribe colombiano. Historia, playas cristalinas, vida nocturna vibrante y experiencias premium en un solo plan diseñado para disfrutar sin preocupaciones.
 
-Incluye vuelo, hotel boutique, tours y traslados.
+---
+
+## 💰 Precios por persona
+
+- 🏨 **Hotel 3 ⭐⭐⭐** desde **USD 599**
+- 🏨 **Hotel 4 ⭐⭐⭐⭐** desde **USD 679**
+- 🏨 **Hotel 5 ⭐⭐⭐⭐⭐** desde **USD 749**
+
+---
+
+## 👶 Tarifas para niños
+
+- 👶 **0 – 2 años:** USD 46 _(seguro de vuelo obligatorio)_
+- 🧒 **3 – 4 años:** Pagan solo el **50% del plan**
+- 👦 **6 años en adelante:** Pagan tarifa completa
+
+---
+
+## ✅ ¿Qué incluye este plan?
+
+- 🏨 **Hospedaje 4 días / 3 noches**
+- 🍽️ **Alimentación completa tipo buffet**  
+  _(Desayuno, almuerzo y cena durante toda la estadía)_
+- 🍹 **Snacks y bebidas ilimitadas**
+- 🏨 **Impuestos hoteleros incluidos**
+- ✈️ **Tiquetes aéreos ida y regreso**  
+  Latam, Avianca, Wingo o Copa Airlines  
+  _(Equipaje de mano 10 kg incluido)_
+- 🧳 **Maleta adicional 23 kg** por solo **USD 39**
+- 🚐 **Traslados Aeropuerto – Hotel – Aeropuerto**
+
+---
+
+## 🌊 Tours y experiencias incluidas
+
+- 🏝️ **Tour día completo Cinco Islas Premium**  
+  _(Según su elección – Almuerzo incluido)_
+- 🏛️ **Tour Centro Histórico y Ciudad Amurallada**
+- 🌴 **Club de Playa Bora Bora + Volcán de Lodo Medicinal**  
+  _(Experiencia día completo)_
+- 🎉 **Tour nocturno en bus chivero**  
+  _(Luces, música, bebidas y snacks incluidos)_
+
+🧭 **Guía acompañante especialista bilingüe en todos los tours**
+
+---
+
+## ⚠️ Día adicional disponible
+
+Consulta por extensión de estadía y personaliza tu experiencia en el Caribe.
+
+---
+
+✨ **CUPOS LIMITADOS** ✨  
+📲 Reserva ahora y vive Cartagena como nunca antes  
+💬 Escríbenos y asegura tu lugar hoy
