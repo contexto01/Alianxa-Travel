@@ -3,6 +3,58 @@
 ---
 
 <footer class="bg-gray-900 text-white">
+  <div class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <p class="text-center text-gray-500 text-xs uppercase tracking-wider mb-6">
+        Certificaciones y aliados
+      </p>
+
+      <div class="grid grid-cols-3 sm:grid-cols-5 gap-6 items-center justify-items-center">
+        <a href="https://www.iata.org/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/iata.webp" class="h-20" alt="IATA" />
+        </a>
+        <a href="https://www.anato.org/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/anato.webp" class="h-20" alt="ANATO" />
+        </a>
+        <a
+          href="https://www.supertransporte.gov.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/logos/superTransporte.webp" class="h-20" alt="SuperTransporte" />
+        </a>
+        <a href="https://www.mincit.gov.co/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/minCIT.webp" class="h-20" alt="MinCIT" />
+        </a>
+        <a href="https://www.untourism.com/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/unTourism.webp" class="h-20" alt="UnTourism" />
+        </a>
+        <a href="https://ccce.org.co/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/camaraComercio.webp" class="h-20" alt="Camara de Comercio" />
+        </a>
+        <a href="https://www.colombia.com/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/colombia.webp" class="h-20" alt="Colombia" />
+        </a>
+        <a href="https://www.aerocivil.gov.co/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/aeronauticaCivil.webp" class="h-20" alt="Aeronáutica Civil" />
+        </a>
+        <a
+          href="https://sedeelectronica.sic.gov.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/logos/industriaYComercio.webp" class="h-20" alt="Industria y Comercio" />
+        </a>
+        <a
+          href="https://www.cotalamerica.org/cotal-tv/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/logos/cotal.webp" class="h-20" alt="cotal" />
+        </a>
+      </div>
+    </div>
+  </div>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
       <!-- Brand -->
@@ -118,15 +170,7 @@
         <h3 class="text-brand-yellow font-extrabold text-base mb-5">Destinos populares</h3>
         <ul class="space-y-2.5">
           {
-            [
-              'Cartagena',
-              'San Andrés',
-              'Cancún',
-              'Punta Cana',
-              'París',
-              'Nueva York',
-              'Bali'
-            ].map((dest) => (
+            ['Cartagena', 'San Andrés', 'Cancún', 'Punta Cana'].map((dest) => (
               <li>
                 <a
                   href={`https://wa.me/573246250212?text=Quiero%20informaci%C3%B3n%20sobre%20${encodeURIComponent(dest)}`}
@@ -157,23 +201,24 @@
         <ul class="space-y-3">
           <li class="flex items-start gap-3 text-sm text-gray-400">
             <span class="text-lg shrink-0">📞</span>
-            <a href="tel:+573001234567" class="hover:text-white transition-colors"
-              >+57 300 123 4567</a
+            <a href="tel:+573246250212" class="hover:text-white transition-colors"
+              >+57 324 6250212</a
             >
           </li>
           <li class="flex items-start gap-3 text-sm text-gray-400">
             <span class="text-lg shrink-0">📧</span>
-            <a href="mailto:info@alianxatravel.com" class="hover:text-white transition-colors"
-              >info@alianxatravel.com</a
+            <a
+              href="mailto:reservas.alianxatravel@gmail.com"
+              class="hover:text-white transition-colors">reservas.alianxatravel@gmail.com</a
             >
           </li>
           <li class="flex items-start gap-3 text-sm text-gray-400">
             <span class="text-lg shrink-0">📍</span>
-            <span>Bogotá, Colombia</span>
+            <span>Carrera 29 A 7 B 50 Medellín Antioquia, Colombia</span>
           </li>
           <li class="flex items-start gap-3 text-sm text-gray-400">
             <span class="text-lg shrink-0">🕐</span>
-            <span>Lun–Sáb: 8am – 7pm</span>
+            <span>Lun–Vie: 8am – 7pm</span>
           </li>
         </ul>
 
@@ -197,7 +242,6 @@
       </div>
     </div>
   </div>
-
   <!-- Bottom bar -->
   <div class="border-t border-gray-800">
     <div

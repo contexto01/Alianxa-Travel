@@ -6,11 +6,11 @@ descripcion: 'Historia, playas paradisíacas y experiencias exclusivas en la joy
 precioDesde: 599
 moneda: 'USD'
 destacado: true
-imagen: '/cartagenaIMG/playa1.webp'
+imagen: '/cartagenaIMG/portada.webp'
 imagenes:
   - '/cartagenaIMG/promocion.webp'
+  - '/cartagenaIMG/playa1.webp'
   - '/cartagenaIMG/playa2.webp'
-  - '/cartagenaIMG/playa3.webp'
 tagRegion: 'Caribe Colombiano'
 seo:
   title: 'Viajes a Cartagena 2025 | Plan Todo Incluido desde $599 USD — Súper Promo'
