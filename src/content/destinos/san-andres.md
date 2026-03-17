@@ -1,5 +1,5 @@
 ---
-nombre: 'San Andrés'
+nombre: 'Viajes a San Andrés'
 pais: 'Colombia'
 region: 'caribe'
 descripcion: 'El mar de los siete colores, playas de arena blanca y aventuras únicas en un plan todo incluido en el Caribe colombiano.'

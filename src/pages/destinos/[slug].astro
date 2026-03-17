@@ -45,7 +45,7 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
       <div class="absolute inset-0">
         <img
           src={destino.data.imagen}
-          alt={`${destino.data.nombre}, ${destino.data.pais}`}
+          alt={`Viajes a ${destino.data.nombre} ${destino.data.pais}`}
           class="w-full h-full object-cover"
           loading="eager"
         />
@@ -202,3 +202,17 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
   <Footer />
   <WhatsAppFloat />
 </Layout>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    "name": "{destino.data.nombre}",
+    "description": "{destino.data.descripcion}",
+    "touristType": ["familias", "parejas", "aventura"],
+    "containedInPlace": {
+      "@type": "Country",
+      "name": "{destino.data.pais}"
+    }
+  }
+</script>
