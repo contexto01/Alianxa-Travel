@@ -59,6 +59,7 @@ const promocionesCollection = defineCollection({
   type: 'content',
   schema: z.object({
     nombre: z.string(),
+    orden: z.number().optional(),
     slugName: z.string(), // Para URL amigable
     pais: z.string(),
     precio: z.number(),

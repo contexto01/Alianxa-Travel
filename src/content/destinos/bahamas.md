@@ -1,5 +1,6 @@
 ---
 nombre: 'Bahamas'
+orden: 6
 pais: 'Bahamas'
 region: 'caribe'
 descripcion: 'Playas rosadas, aguas cristalinas y experiencias únicas en el Caribe.'

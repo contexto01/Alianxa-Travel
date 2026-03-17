@@ -1,5 +1,6 @@
 ---
 nombre: 'Cartagena'
+orden: 4
 slugName: 'cartagena'
 pais: 'Colombia'
 precio: 599

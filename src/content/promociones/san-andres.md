@@ -1,5 +1,6 @@
 ---
 nombre: 'San Andrés'
+orden: 1
 slugName: 'san-andres'
 pais: 'Colombia'
 precio: 620

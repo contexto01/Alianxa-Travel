@@ -6,6 +6,13 @@ interface Props {
 }
 
 const { promociones } = Astro.props;
+const promocionesOrdenadas = [...promociones].sort((a, b) => {
+  if (a.data.destacada !== b.data.destacada) {
+    return a.data.destacada ? -1 : 1;
+  }
+  return (a.data.orden ?? 999) - (b.data.orden ?? 999);
+});
+console.log('Promociones ordenadas:', promocionesOrdenadas.map(p => ({ nombre: p.data.nombre, destacada: p.data.destacada, orden: p.data.orden })));
 ---
 
 <section id="promociones" class="py-10 lg:py-28 bg-gray-50">
@@ -20,7 +27,7 @@ const { promociones } = Astro.props;
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-      {promociones.map((promo, i) => (
+      {promocionesOrdenadas.map((promo, i) => (
         <article
           class="bg-white rounded-2xl overflow-hidden shadow-card card-hover border border-gray-100 reveal"
           style={`transition-delay: ${i * 80}ms`}

@@ -1,5 +1,6 @@
 ---
 nombre: 'Santa Marta'
+orden: 3
 slugName: 'santa-marta'
 pais: 'Colombia'
 precio: 409

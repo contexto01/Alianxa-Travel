@@ -1,5 +1,6 @@
 ---
 nombre: 'Medellín'
+orden: 2
 slugName: 'medellin'
 pais: 'Colombia'
 precio: 649

@@ -1,5 +1,6 @@
 ---
 nombre: 'Eje Cafetero'
+orden: 5
 slugName: 'eje-cafetero'
 pais: 'Colombia'
 precio: 599

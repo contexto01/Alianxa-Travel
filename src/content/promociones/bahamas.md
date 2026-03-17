@@ -1,5 +1,6 @@
 ---
 nombre: 'Bahamas'
+orden: 6
 slugName: 'bahamas'
 pais: 'Bahamas'
 precio: 718
