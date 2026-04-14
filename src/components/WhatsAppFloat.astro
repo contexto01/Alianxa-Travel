@@ -6,7 +6,7 @@
   href="https://wa.me/573246250212?text=Hola!%20Me%20interesa%20un%20paquete%20de%20viaje%20con%20Alianxa%20Travel"
   target="_blank"
   rel="noopener noreferrer"
-  class="whatsapp-float"
+  class="whatsapp-float btn-whatsapp-conversion"
   aria-label="Contáctanos por WhatsApp"
   title="¡Chatea con nosotros!"
 >
@@ -50,3 +50,23 @@
     animation: float 3s ease-in-out infinite;
   }
 </style>
+
+<script is:inline>
+  function handleWhatsAppClick() {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {
+        send_to: 'AW-18028497164/SYupCPisqZAcEIyS1JRD',
+        value: 1.0,
+        currency: 'COP'
+      })
+    }
+  }
+
+  // Esperar a que el DOM cargue para asignar el evento
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn-whatsapp-conversion')
+    buttons.forEach((button) => {
+      button.addEventListener('click', handleWhatsAppClick)
+    })
+  })
+</script>

@@ -81,7 +81,7 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
             href={whatsappURL}
             target="_blank"
             rel="noopener"
-            class="inline-flex items-center gap-3 px-9 py-4 bg-emerald-500 text-white font-black text-lg rounded-full hover:bg-emerald-400 hover:scale-105 transition-all shadow-xl"
+            class="inline-flex items-center gap-3 px-9 py-4 bg-emerald-500 text-white font-black text-lg rounded-full hover:bg-emerald-400 hover:scale-105 transition-all shadow-xl btn-whatsapp-conversion btn-whatsapp-conversion"
           >
             Cotizar por WhatsApp
           </a>
@@ -184,14 +184,14 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
         <h2 class="text-3xl md:text-4xl font-black text-brand-dark mb-4">
           ¿Listo para viajar a {destino.data.nombre}?
         </h2>
-        <p class="text-gray-700 text-lg mb-8">
+        <p class="text-gray-700 text-lg mb-8 btn-whatsapp-conversion">
           Cotiza ahora y deja tu viaje en manos de expertos
         </p>
         <a
           href={whatsappURL}
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center gap-3 px-10 py-5 bg-emerald-500 text-white font-black text-xl rounded-full hover:bg-emerald-400 hover:scale-105 transition-all shadow-xl"
+          class="inline-flex items-center gap-3 px-10 py-5 bg-emerald-500 text-white font-black text-xl rounded-full hover:bg-emerald-400 hover:scale-105 transition-all shadow-xl btn-whatsapp-conversion"
         >
           Cotizar viaje ahora
         </a>
@@ -215,4 +215,24 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
       "name": "{destino.data.pais}"
     }
   }
+</script>
+
+<script is:inline>
+  function handleWhatsAppClick() {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {
+        send_to: 'AW-18028497164/SYupCPisqZAcEIyS1JRD',
+        value: 1.0,
+        currency: 'COP'
+      })
+    }
+  }
+
+  // Esperar a que el DOM cargue para asignar el evento
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn-whatsapp-conversion')
+    buttons.forEach((button) => {
+      button.addEventListener('click', handleWhatsAppClick)
+    })
+  })
 </script>
