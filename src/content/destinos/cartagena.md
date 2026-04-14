@@ -13,7 +13,7 @@ imagenes:
   - '/cartagenaIMG/playa2.webp'
 tagRegion: 'Caribe Colombiano'
 seo:
-  title: 'Viajes a Cartagena 2025 | Plan Todo Incluido desde $599 USD — Súper Promo'
+  title: 'Viajes a Cartagena 2026 | Plan Todo Incluido desde $599 USD — Súper Promo'
   description: 'Descubre Cartagena con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, cinco islas premium, Bora Bora y más. ¡Reserva ahora!'
   keywords:
     - 'viajes a cartagena'

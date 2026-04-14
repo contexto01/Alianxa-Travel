@@ -1,28 +1,28 @@
 ---
-nombre: "Río de Janeiro"
-pais: "Brasil"
-region: "sudamerica"
-descripcion: "La Ciudad Maravillosa con el Cristo Redentor, Copacabana, samba y carnaval"
+nombre: 'Río de Janeiro'
+pais: 'Brasil'
+region: 'sudamerica'
+descripcion: 'La Ciudad Maravillosa con el Cristo Redentor, Copacabana, samba y carnaval'
 precioDesde: 1199
-moneda: "USD"
+moneda: 'USD'
 destacado: true
-imagen: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80&auto=format&fit=crop"
+imagen: 'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80&auto=format&fit=crop'
 imagenes:
-  - "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=1200&q=85&auto=format&fit=crop"
-  - "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=1200&q=85&auto=format&fit=crop"
-  - "https://images.unsplash.com/photo-1548963670-aaaa8f73a5e3?w=1200&q=85&auto=format&fit=crop"
-tagRegion: "Sudamérica"
+  - 'https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=1200&q=85&auto=format&fit=crop'
+  - 'https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?w=1200&q=85&auto=format&fit=crop'
+  - 'https://images.unsplash.com/photo-1548963670-aaaa8f73a5e3?w=1200&q=85&auto=format&fit=crop'
+tagRegion: 'Sudamérica'
 seo:
-  title: "Viajes a Río de Janeiro 2025 | Paquetes desde $1199 — Alianxa Travel"
-  description: "Conoce Río de Janeiro: Cristo Redentor, Copacabana, Pan de Azúcar. Paquetes con vuelo, hotel y tours desde Colombia. ¡La Ciudad Maravillosa te espera!"
+  title: 'Viajes a Río de Janeiro 2026 | Paquetes desde $1199 — Alianxa Travel'
+  description: 'Conoce Río de Janeiro: Cristo Redentor, Copacabana, Pan de Azúcar. Paquetes con vuelo, hotel y tours desde Colombia. ¡La Ciudad Maravillosa te espera!'
   keywords:
-    - "viajes rio de janeiro"
-    - "rio de janeiro brasil"
-    - "cristo redentor"
-    - "copacabana rio"
+    - 'viajes rio de janeiro'
+    - 'rio de janeiro brasil'
+    - 'cristo redentor'
+    - 'copacabana rio'
 cta:
-  texto: "Cotizar viaje a Río"
-  whatsapp: "Hola!%20Quiero%20cotizar%20un%20viaje%20a%20R%C3%ADo%20de%20Janeiro"
+  texto: 'Cotizar viaje a Río'
+  whatsapp: 'Hola!%20Quiero%20cotizar%20un%20viaje%20a%20R%C3%ADo%20de%20Janeiro'
 ---
 
 ## La Ciudad Maravillosa

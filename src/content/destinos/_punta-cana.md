@@ -1,29 +1,29 @@
 ---
-nombre: "Punta Cana"
-pais: "República Dominicana"
-region: "caribe"
-descripcion: "El paraíso del Caribe con playas infinitas, resorts de lujo y aguas cristalinas perfectas para el descanso total"
+nombre: 'Punta Cana'
+pais: 'República Dominicana'
+region: 'caribe'
+descripcion: 'El paraíso del Caribe con playas infinitas, resorts de lujo y aguas cristalinas perfectas para el descanso total'
 precioDesde: 1299
-moneda: "USD"
+moneda: 'USD'
 destacado: true
-imagen: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80&auto=format&fit=crop"
+imagen: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80&auto=format&fit=crop'
 imagenes:
-  - "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=85&auto=format&fit=crop"
-  - "https://images.unsplash.com/photo-1606487842051-a969c7efe526?w=1200&q=85&auto=format&fit=crop"
-  - "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=1200&q=85&auto=format&fit=crop"
-tagRegion: "Caribe"
+  - 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=85&auto=format&fit=crop'
+  - 'https://images.unsplash.com/photo-1606487842051-a969c7efe526?w=1200&q=85&auto=format&fit=crop'
+  - 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=1200&q=85&auto=format&fit=crop'
+tagRegion: 'Caribe'
 seo:
-  title: "Viajes a Punta Cana 2025 | Resorts Todo Incluido desde $1299 — Alianxa Travel"
-  description: "Punta Cana te espera. Resorts 5 estrellas todo incluido, playas paradisíacas y actividades ilimitadas. Paquetes desde Colombia con Alianxa Travel. ¡Reserva ya!"
+  title: 'Viajes a Punta Cana 2026 | Resorts Todo Incluido desde $1299 — Alianxa Travel'
+  description: 'Punta Cana te espera. Resorts 5 estrellas todo incluido, playas paradisíacas y actividades ilimitadas. Paquetes desde Colombia con Alianxa Travel. ¡Reserva ya!'
   keywords:
-    - "viajes punta cana"
-    - "punta cana todo incluido"
-    - "resorts punta cana"
-    - "punta cana desde colombia"
-    - "vacaciones caribe"
+    - 'viajes punta cana'
+    - 'punta cana todo incluido'
+    - 'resorts punta cana'
+    - 'punta cana desde colombia'
+    - 'vacaciones caribe'
 cta:
-  texto: "Cotizar viaje a Punta Cana"
-  whatsapp: "Hola!%20Quiero%20cotizar%20un%20viaje%20a%20Punta%20Cana%20%E2%9C%88%EF%B8%8F"
+  texto: 'Cotizar viaje a Punta Cana'
+  whatsapp: 'Hola!%20Quiero%20cotizar%20un%20viaje%20a%20Punta%20Cana%20%E2%9C%88%EF%B8%8F'
 ---
 
 ## El paraíso del Caribe dominicano

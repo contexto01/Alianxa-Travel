@@ -13,7 +13,7 @@ imagenes:
   - '/santaMartaIMG/Playa2.webp'
 tagRegion: 'Caribe Colombiano'
 seo:
-  title: 'Viajes a Santa Marta 2025 | Plan Todo Incluido desde $409 USD — Súper Promo'
+  title: 'Viajes a Santa Marta 2026 | Plan Todo Incluido desde $409 USD — Súper Promo'
   description: 'Vive Santa Marta con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, tours, playas paradisíacas y experiencias inolvidables. ¡Cupos limitados!'
   keywords:
     - 'viajes a santa marta'

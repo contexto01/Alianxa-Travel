@@ -13,7 +13,7 @@ imagenes:
   - '/curazaoIMG/3.webp'
 tagRegion: 'Caribe'
 seo:
-  title: 'Viajes a Curazao 2025 | Todo Incluido desde $699 USD'
+  title: 'Viajes a Curazao 2026 | Todo Incluido desde $699 USD'
   description: 'Explora Curazao con playas cristalinas, Klein Curazao, Sea Aquarium, Willemstad y experiencias únicas en el Caribe.'
 cta:
   texto: 'Quiero esta promo a Curazao'

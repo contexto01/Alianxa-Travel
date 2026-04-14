@@ -13,7 +13,7 @@ imagenes:
   - '/cancunIMG/3.webp'
 tagRegion: 'Caribe'
 seo:
-  title: 'Viajes a Cancún 2025 | Todo Incluido desde $799 USD'
+  title: 'Viajes a Cancún 2026 | Todo Incluido desde $799 USD'
   description: 'Disfruta Cancún con tours a Xcaret, Chichén Itzá, Cozumel y más.'
 cta:
   texto: 'Quiero esta promo a Cancún'

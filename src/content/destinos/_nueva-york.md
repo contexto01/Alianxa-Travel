@@ -8,7 +8,7 @@ destacado: true
 imagen: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&q=80&auto=format&fit=crop'
 tagRegion: 'Norteamérica'
 seo:
-  title: 'Viajes a Nueva York 2025 | Paquetes desde $1699 — Alianxa Travel'
+  title: 'Viajes a Nueva York 2026 | Paquetes desde $1699 — Alianxa Travel'
   description: 'Nueva York te espera: Times Square, Estatua de la Libertad, Central Park, Broadway. Paquetes desde Colombia con Alianxa Travel. ¡Reserva ya!'
   keywords: ['viajes nueva york', 'new york', 'times square', 'broadway']
 cta:

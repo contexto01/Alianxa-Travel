@@ -12,7 +12,6 @@ const promocionesOrdenadas = [...promociones].sort((a, b) => {
   }
   return (a.data.orden ?? 999) - (b.data.orden ?? 999);
 });
-console.log('Promociones ordenadas:', promocionesOrdenadas.map(p => ({ nombre: p.data.nombre, destacada: p.data.destacada, orden: p.data.orden })));
 ---
 
 <section id="promociones" class="py-10 lg:py-28 bg-gray-50">

@@ -13,7 +13,7 @@ imagenes:
   - '/medellinIMG/welcome.webp'
 tagRegion: 'Colombia'
 seo:
-  title: 'Viajes a Medellín 2025 | Plan Todo Incluido desde $649 USD — Súper Promo'
+  title: 'Viajes a Medellín 2026 | Plan Todo Incluido desde $649 USD — Súper Promo'
   description: 'Descubre Medellín con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, tours, Hacienda Nápoles, Guatapé y más. ¡Reserva ahora!'
   keywords:
     - 'viajes a medellin'

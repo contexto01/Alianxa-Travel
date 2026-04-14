@@ -13,7 +13,7 @@ imagenes:
   - '/ejeCafeteroIMG/3.webp'
 tagRegion: 'Colombia'
 seo:
-  title: 'Viajes al Eje Cafetero 2025 | Plan Todo Incluido desde $599 USD'
+  title: 'Viajes al Eje Cafetero 2026 | Plan Todo Incluido desde $599 USD'
   description: 'Descubre Salento, Valle del Cocora, Termales de Santa Rosa, Parque del Café y Panaca en un plan todo incluido.'
 cta:
   texto: 'Quiero esta promo al Eje Cafetero'

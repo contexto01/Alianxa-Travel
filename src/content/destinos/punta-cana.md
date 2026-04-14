@@ -13,7 +13,7 @@ imagenes:
   - '/puntaCanaIMG/3.webp'
 tagRegion: 'Caribe'
 seo:
-  title: 'Viajes a Punta Cana 2025 | Todo Incluido desde $880 USD'
+  title: 'Viajes a Punta Cana 2026 | Todo Incluido desde $880 USD'
   description: 'Disfruta Punta Cana con plan todo incluido, hotel 5 estrellas, Isla Saona, Scape Park, Coco Bongo y más.'
 cta:
   texto: 'Quiero esta promo a Punta Cana'

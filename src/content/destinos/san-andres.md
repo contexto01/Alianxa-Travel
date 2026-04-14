@@ -13,7 +13,7 @@ imagenes:
   - '/sanAndresIMG/playa3.webp'
 tagRegion: 'Caribe Colombiano'
 seo:
-  title: 'Viajes a San Andrés 2025 | Plan Todo Incluido desde $620 USD — Súper Promo'
+  title: 'Viajes a San Andrés 2026 | Plan Todo Incluido desde $620 USD — Súper Promo'
   description: 'Vive San Andrés con un plan todo incluido de 5 días y 4 noches. Vuelos, hotel, tours marinos, catamarán, Johnny Cay y más. ¡Reserva ahora!'
   keywords:
     - 'viajes a san andres'

@@ -13,7 +13,7 @@ imagenes:
   - '/mexicoIMG/3.webp'
 tagRegion: 'México'
 seo:
-  title: 'Viaje CDMX y Cancún 2025 | 7 días desde $899'
+  title: 'Viaje CDMX y Cancún 2026 | 7 días desde $899'
   description: 'Descubre Ciudad de México y Cancún en un solo viaje con tours completos.'
 cta:
   texto: 'Quiero esta promo CDMX + Cancún'

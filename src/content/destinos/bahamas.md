@@ -14,7 +14,7 @@ imagenes:
   - '/bahamaIMG/3.webp'
 tagRegion: 'Caribe'
 seo:
-  title: 'Viajes a Bahamas 2025 | Todo Incluido desde $718 USD'
+  title: 'Viajes a Bahamas 2026 | Todo Incluido desde $718 USD'
   description: 'Disfruta Bahamas con Pink Sands Beach, Pig Beach, Atlantis, Nassau y experiencias únicas en el Caribe.'
 cta:
   texto: 'Quiero esta promo a Bahamas'
