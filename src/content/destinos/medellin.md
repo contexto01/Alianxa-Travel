@@ -32,7 +32,7 @@ cta:
 
 🔥 **Desde USD 649 por persona** 🔥
 
-Vive **Medellín, la ciudad de la eterna primavera**, con un plan diseñado para que disfrutes sin preocupaciones. Cultura, naturaleza, café, historia y experiencias únicas te esperan en uno de los destinos más vibrantes de Colombia.
+Vive **Medellín, la ciudad de la eterna primavera**, con un plan diseñado para que disfrutes sin preocupaciones. Cultura, naturaleza, café, historia y experiencias únicas te esperan en uno de los destinos más vibrantes de **Colombia**.
 
 ---
 

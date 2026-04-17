@@ -29,7 +29,27 @@ const paquetesRelacionados = paquetes
   )
   .slice(0, 3)
 
-const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp}`
+const whatsappURL = `https://wa.me/573246250212?text=${destino.data.cta.whatsapp}`
+
+// ─── SEO: JSON-LD estructurado correctamente ───
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'TouristDestination',
+  name: destino.data.nombre,
+  description: destino.data.descripcion,
+  image: destino.data.imagen,
+  touristType: ['familias', 'parejas', 'aventura'],
+  containedInPlace: {
+    '@type': 'Country',
+    name: destino.data.pais
+  },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: destino.data.moneda,
+    price: destino.data.precioDesde,
+    availability: 'https://schema.org/InStock'
+  }
+})
 ---
 
 <Layout
@@ -40,7 +60,7 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
   <Header />
 
   <main>
-    <!-- HERO -->
+    <!-- ══ HERO ══ -->
     <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0">
         <img
@@ -71,9 +91,7 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
         <div class="flex flex-wrap gap-6 justify-center items-center">
           <div class="bg-white/15 backdrop-blur rounded-2xl px-7 py-5 border border-white/20">
             <p class="text-sm text-white/70">Desde</p>
-            <p class="text-4xl font-black text-brand-yellow">
-              ${destino.data.precioDesde}
-            </p>
+            <p class="text-4xl font-black text-brand-yellow">${destino.data.precioDesde}</p>
             <p class="text-sm text-white/60">{destino.data.moneda} por persona</p>
           </div>
 
@@ -83,13 +101,22 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
             rel="noopener"
             class="inline-flex items-center gap-3 px-9 py-4 bg-emerald-500 text-white font-black text-lg rounded-full hover:bg-emerald-400 hover:scale-105 transition-all shadow-xl btn-whatsapp-conversion"
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 fill-current"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              ></path>
+            </svg>
             Cotizar por WhatsApp
           </a>
         </div>
       </div>
     </section>
 
-    <!-- GALERÍA -->
+    <!-- ══ GALERÍA ══ -->
     {
       destino.data.imagenes && destino.data.imagenes.length > 0 && (
         <section class="py-14 bg-gray-50">
@@ -111,19 +138,16 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
       )
     }
 
-    <!-- CONTENIDO COMERCIAL -->
-    <section id="contenido" class="py-20 bg-white">
+    <!-- ══ CONTENIDO MARKDOWN ══ -->
+    <section id="contenido" class="bg-white">
       <div class="max-w-4xl mx-auto px-6">
-        <div class="space-y-14 text-gray-700">
-          <!-- IMPORTANTE:
-               Aquí el Markdown manda.
-               Ya NO usamos prose -->
+        <div class="contenido-markdown">
           <Content />
         </div>
       </div>
     </section>
 
-    <!-- PAQUETES RELACIONADOS -->
+    <!-- ══ PAQUETES RELACIONADOS ══ -->
     {
       paquetesRelacionados.length > 0 && (
         <section class="py-20 bg-gray-50">
@@ -149,10 +173,8 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                   </div>
-
                   <div class="p-6">
                     <h3 class="text-xl font-black mb-2">{paquete.data.nombre}</h3>
-
                     <div class="flex items-baseline gap-2 mb-4">
                       <span class="text-sm text-gray-500">Desde</span>
                       <span class="text-4xl font-black text-brand-red">
@@ -160,9 +182,8 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
                       </span>
                       <span class="text-sm text-gray-400">{paquete.data.moneda}</span>
                     </div>
-
                     <a
-                      href={`https://wa.me/573001234567?text=${paquete.data.whatsapp}`}
+                      href={`https://wa.me/573246250212?text=${paquete.data.whatsapp}`}
                       target="_blank"
                       rel="noopener"
                       class="block w-full py-3 bg-brand-dark text-white text-center font-bold rounded-xl hover:bg-brand-blue transition btn-whatsapp-conversion"
@@ -178,13 +199,13 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
       )
     }
 
-    <!-- CTA FINAL -->
+    <!-- ══ CTA FINAL ══ -->
     <section class="py-20 bg-brand-yellow">
       <div class="max-w-4xl mx-auto px-6 text-center">
         <h2 class="text-3xl md:text-4xl font-black text-brand-dark mb-4">
           ¿Listo para viajar a {destino.data.nombre}?
         </h2>
-        <p class="text-gray-700 text-lg mb-8 btn-whatsapp-conversion">
+        <p class="text-gray-700 text-lg mb-8">
           Cotiza ahora y deja tu viaje en manos de expertos
         </p>
         <a
@@ -193,6 +214,15 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
           rel="noopener"
           class="inline-flex items-center gap-3 px-10 py-5 bg-emerald-500 text-white font-black text-xl rounded-full hover:bg-emerald-400 hover:scale-105 transition-all shadow-xl btn-whatsapp-conversion"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7 fill-current"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            ></path>
+          </svg>
           Cotizar viaje ahora
         </a>
       </div>
@@ -203,19 +233,8 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
   <WhatsAppFloat />
 </Layout>
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TouristDestination",
-    "name": "{destino.data.nombre}",
-    "description": "{destino.data.descripcion}",
-    "touristType": ["familias", "parejas", "aventura"],
-    "containedInPlace": {
-      "@type": "Country",
-      "name": "{destino.data.pais}"
-    }
-  }
-</script>
+<!-- ══ JSON-LD CORRECTO: variables interpoladas desde Astro ══ -->
+<script type="application/ld+json" set:html={jsonLd} />
 
 <script is:inline>
   function handleWhatsAppClick() {
@@ -228,11 +247,400 @@ const whatsappURL = `https://wa.me/573001234567?text=${destino.data.cta.whatsapp
     }
   }
 
-  // Esperar a que el DOM cargue para asignar el evento
   document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.btn-whatsapp-conversion')
-    buttons.forEach((button) => {
-      button.addEventListener('click', handleWhatsAppClick)
+    // ── Tracking WhatsApp ──
+    document.querySelectorAll('.btn-whatsapp-conversion').forEach((btn) => {
+      btn.addEventListener('click', handleWhatsAppClick)
+    })
+
+    // ── Post-procesado del markdown: añade clases según sección H2 ──
+    const container = document.querySelector('.contenido-markdown')
+    if (!container) return
+
+    container.querySelectorAll('h2').forEach((h2) => {
+      const text = h2.textContent || ''
+      // Detectar sección de precios
+      if (text.includes('Precio') || text.includes('precio')) {
+        h2.classList.add('section-prices')
+        let next = h2.nextElementSibling
+        while (next && next.tagName !== 'H2' && next.tagName !== 'HR') {
+          if (next.tagName === 'UL') next.classList.add('lista-precios')
+          next = next.nextElementSibling
+        }
+      }
+      // Detectar sección de niños / tarifas
+      if (text.includes('niño') || text.includes('Tarifa') || text.includes('tarifa')) {
+        let next = h2.nextElementSibling
+        while (next && next.tagName !== 'H2' && next.tagName !== 'HR') {
+          if (next.tagName === 'UL') next.classList.add('lista-tarifas')
+          next = next.nextElementSibling
+        }
+      }
+      // Detectar sección de tours
+      if (
+        text.includes('Tour') ||
+        text.includes('tour') ||
+        text.includes('experiencia') ||
+        text.includes('Experiencia')
+      ) {
+        let next = h2.nextElementSibling
+        while (next && next.tagName !== 'H2' && next.tagName !== 'HR') {
+          if (next.tagName === 'UL') next.classList.add('lista-tours')
+          next = next.nextElementSibling
+        }
+      }
+      // Detectar sección "No incluye"
+      if (text.includes('No incluye') || text.includes('no incluye') || text.includes('❌')) {
+        h2.classList.add('section-no-incluye')
+        let next = h2.nextElementSibling
+        while (next && next.tagName !== 'H2' && next.tagName !== 'HR') {
+          if (next.tagName === 'UL') next.classList.add('lista-no-incluye')
+          next = next.nextElementSibling
+        }
+      }
     })
   })
 </script>
+
+<style>
+  /* ══════════════════════════════════════════════════
+     CONTENIDO MARKDOWN — Alianxa Travel
+     Versión mejorada — Brand-matching & Google Ads ready
+  ══════════════════════════════════════════════════ */
+
+  .contenido-markdown {
+    --at-dark: #1a1f3a;
+    --at-yellow: #f5c110;
+    --at-red: #e53935;
+    --at-green: #10b981;
+    --at-blue: #1565c0;
+    --at-border: #e8eaf0;
+    --at-text: #374151;
+    --at-muted: #6b7280;
+    --at-bg-soft: #f9fafb;
+
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--at-text);
+  }
+
+  /* ══════════════════════════════════════
+     ENCABEZADOS
+  ══════════════════════════════════════ */
+
+  /* H2: Cabecera de sección — panel con acento de color */
+  .contenido-markdown :global(h2) {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--at-dark);
+    background: linear-gradient(135deg, #fffbeb 0%, #fff 100%);
+    border-left: 5px solid var(--at-yellow);
+    border-radius: 0 16px 16px 0;
+    padding: 0.9rem 1.4rem;
+    margin: 2.75rem 0 1.2rem;
+    line-height: 1.3;
+    box-shadow: 0 2px 12px rgba(245, 193, 16, 0.1);
+  }
+
+  /* H2 Precios: acento azul */
+  .contenido-markdown :global(h2.section-prices) {
+    background: linear-gradient(135deg, #eff6ff 0%, #fff 100%);
+    border-left-color: var(--at-blue);
+    box-shadow: 0 2px 12px rgba(21, 101, 192, 0.08);
+  }
+
+  /* H2 No incluye: acento rojo */
+  .contenido-markdown :global(h2.section-no-incluye) {
+    background: linear-gradient(135deg, #fff1f1 0%, #fff 100%);
+    border-left-color: var(--at-red);
+    box-shadow: 0 2px 12px rgba(229, 57, 53, 0.08);
+  }
+
+  /* H3: Subtítulo con pill */
+  .contenido-markdown :global(h3) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--at-dark);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    background: var(--at-dark);
+    color: #fff;
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+    margin: 1.75rem 0 0.8rem;
+  }
+
+  /* ══════════════════════════════════════
+     SEPARADORES
+  ══════════════════════════════════════ */
+  .contenido-markdown :global(hr) {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, var(--at-yellow) 0%, transparent 70%);
+    margin: 2.5rem 0;
+    border-radius: 2px;
+    opacity: 0.6;
+  }
+
+  /* ══════════════════════════════════════
+     PÁRRAFOS Y TEXTO
+  ══════════════════════════════════════ */
+  .contenido-markdown :global(p) {
+    margin: 0.4rem 0 1rem;
+    font-size: 0.96rem;
+    color: var(--at-text);
+  }
+
+  .contenido-markdown :global(strong) {
+    font-weight: 700;
+    color: var(--at-dark);
+  }
+
+  /* Texto en cursiva: chip gris */
+  .contenido-markdown :global(em) {
+    font-style: normal;
+    font-size: 0.83rem;
+    color: var(--at-muted);
+    background: #f3f4f6;
+    padding: 0.1rem 0.45rem;
+    border-radius: 5px;
+  }
+
+  /* ══════════════════════════════════════
+     PRECIO DESTACADO
+     Párrafo que contiene solo un <strong>
+  ══════════════════════════════════════ */
+  .contenido-markdown :global(p:has(> strong:only-child)) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--at-dark);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    margin: 0.3rem 0 1.5rem;
+    box-shadow: 0 4px 18px rgba(26, 31, 58, 0.18);
+  }
+
+  .contenido-markdown :global(p:has(> strong:only-child) strong) {
+    color: var(--at-yellow);
+    font-size: 1.2rem;
+  }
+
+  /* ══════════════════════════════════════
+     LISTAS BASE — checklist cards
+  ══════════════════════════════════════ */
+  .contenido-markdown :global(ul) {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1.5rem;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  @media (min-width: 640px) {
+    .contenido-markdown :global(ul) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .contenido-markdown :global(ul li) {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    background: #fff;
+    border: 1.5px solid var(--at-border);
+    border-radius: 14px;
+    padding: 0.75rem 1rem;
+    font-size: 0.93rem;
+    line-height: 1.5;
+    transition:
+      border-color 0.18s,
+      box-shadow 0.18s,
+      transform 0.18s;
+  }
+
+  .contenido-markdown :global(ul li:hover) {
+    border-color: var(--at-yellow);
+    box-shadow: 0 4px 16px rgba(245, 193, 16, 0.14);
+    transform: translateY(-1px);
+  }
+
+  /* Ícono check verde por defecto */
+  .contenido-markdown :global(ul li)::before {
+    content: '';
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+    border-radius: 50%;
+    background-color: var(--at-green);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* ══════════════════════════════════════
+     LISTA DE PRECIOS — tarjetas hotel
+  ══════════════════════════════════════ */
+  .contenido-markdown :global(ul.lista-precios) {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  @media (min-width: 500px) {
+    .contenido-markdown :global(ul.lista-precios) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .contenido-markdown :global(ul.lista-precios li) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    background: linear-gradient(135deg, #eff6ff 0%, #fff 100%);
+    border: 2px solid #dbeafe;
+    border-radius: 16px;
+    padding: 1rem 1.1rem;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contenido-markdown :global(ul.lista-precios li:hover) {
+    border-color: var(--at-blue);
+    box-shadow: 0 6px 20px rgba(21, 101, 192, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .contenido-markdown :global(ul.lista-precios li)::before {
+    display: none; /* Quitamos el check, los emojis de hotel se muestran */
+  }
+
+  /* Resaltar el precio en items de lista de precios */
+  .contenido-markdown :global(ul.lista-precios li strong:last-child) {
+    display: inline-block;
+    color: var(--at-red);
+    font-size: 1.35rem;
+    font-weight: 900;
+    margin-top: 0.2rem;
+    letter-spacing: -0.02em;
+  }
+
+  /* ══════════════════════════════════════
+     LISTA DE TARIFAS NIÑOS
+  ══════════════════════════════════════ */
+  .contenido-markdown :global(ul.lista-tarifas) {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .contenido-markdown :global(ul.lista-tarifas) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .contenido-markdown :global(ul.lista-tarifas li) {
+    background: linear-gradient(135deg, #f0fdf4 0%, #fff 100%);
+    border-color: #bbf7d0;
+  }
+
+  .contenido-markdown :global(ul.lista-tarifas li)::before {
+    background-color: #f59e0b;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath d='M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z'/%3E%3C/svg%3E");
+  }
+
+  /* ══════════════════════════════════════
+     LISTA DE TOURS
+  ══════════════════════════════════════ */
+  .contenido-markdown :global(ul.lista-tours) {
+    grid-template-columns: 1fr;
+  }
+
+  .contenido-markdown :global(ul.lista-tours li) {
+    background: linear-gradient(135deg, #fffbeb 0%, #fff 100%);
+    border-color: #fde68a;
+    padding: 0.8rem 1.1rem;
+  }
+
+  .contenido-markdown :global(ul.lista-tours li)::before {
+    background-color: var(--at-yellow);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%231a1f3a'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  /* ══════════════════════════════════════
+     LISTA "NO INCLUYE" — estilo advertencia
+  ══════════════════════════════════════ */
+  .contenido-markdown :global(ul.lista-no-incluye) {
+    grid-template-columns: 1fr;
+  }
+
+  .contenido-markdown :global(ul.lista-no-incluye li) {
+    background: linear-gradient(135deg, #fff1f1 0%, #fff 100%);
+    border-color: #fecaca;
+  }
+
+  .contenido-markdown :global(ul.lista-no-incluye li:hover) {
+    border-color: var(--at-red);
+    box-shadow: 0 4px 16px rgba(229, 57, 53, 0.1);
+  }
+
+  .contenido-markdown :global(ul.lista-no-incluye li)::before {
+    background-color: var(--at-red);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  /* ══════════════════════════════════════
+     LISTAS ANIDADAS
+  ══════════════════════════════════════ */
+  .contenido-markdown :global(ul ul) {
+    grid-template-columns: 1fr !important;
+    margin: 0.4rem 0 0;
+    padding-left: 0.5rem;
+  }
+
+  .contenido-markdown :global(ul ul li) {
+    background: #f9fafb;
+    border-color: #eee;
+    font-size: 0.87rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 8px;
+  }
+
+  .contenido-markdown :global(ul ul li)::before {
+    width: 16px;
+    height: 16px;
+    background-color: #9ca3af;
+    background-size: 10px;
+  }
+
+  /* ══════════════════════════════════════
+     BLOQUE CTA FINAL EN MARKDOWN
+     Párrafo con solo emojis o texto de llamada
+  ══════════════════════════════════════ */
+  .contenido-markdown :global(p:last-of-type) {
+    background: linear-gradient(135deg, var(--at-dark) 0%, #2d3561 100%);
+    color: #fff;
+    padding: 1.2rem 1.5rem;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    box-shadow: 0 8px 32px rgba(26, 31, 58, 0.18);
+  }
+
+  .contenido-markdown :global(p:last-of-type strong) {
+    color: var(--at-yellow);
+  }
+</style>
