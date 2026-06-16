@@ -1,0 +1,10 @@
+{
+  "nombre": "Norteamérica",
+  "slug": "norteamerica",
+  "icon": "🗽",
+  "descripcion": "Vive la energía de Nueva York, la magia de Cancún, la belleza de Miami y las maravillas naturales de Canadá.",
+  "destinosDestacados": ["Nueva York", "Cancún", "Miami", "Las Vegas", "Toronto"],
+  "imagen": "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=800&q=80&auto=format&fit=crop",
+  "color": "from-red-600 to-rose-700",
+  "whatsapp": "Me%20interesa%20viajar%20a%20Norteam%C3%A9rica"
+}

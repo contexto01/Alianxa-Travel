@@ -1,0 +1,10 @@
+{
+  "nombre": "Europa",
+  "slug": "europa",
+  "icon": "🏰",
+  "descripcion": "Descubre la magia de París, Roma, Barcelona, Amsterdam y más ciudades icónicas del viejo continente.",
+  "destinosDestacados": ["París", "Roma", "Barcelona", "Amsterdam", "Lisboa"],
+  "imagen": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=80&auto=format&fit=crop",
+  "color": "from-indigo-600 to-blue-700",
+  "whatsapp": "Me%20interesa%20viajar%20a%20Europa"
+}

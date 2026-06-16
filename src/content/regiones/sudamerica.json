@@ -1,0 +1,10 @@
+{
+  "nombre": "Sudamérica",
+  "slug": "sudamerica",
+  "icon": "🌿",
+  "descripcion": "Explora la diversidad de Brasil, Argentina, Perú, Chile y Colombia. Cultura, naturaleza y gastronomía únicos.",
+  "destinosDestacados": ["Río de Janeiro", "Buenos Aires", "Machu Picchu", "Santiago", "Cartagena"],
+  "imagen": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80&auto=format&fit=crop",
+  "color": "from-emerald-600 to-green-700",
+  "whatsapp": "Me%20interesa%20viajar%20a%20Sudam%C3%A9rica"
+}
