@@ -60,6 +60,7 @@
             target="_blank"
             rel="noopener"
             class="btn-outline text-base px-7 py-3.5"
+            onclick="fbq('track','Lead')"
           >
             💬 Chatea con nosotros
           </a>
@@ -256,6 +257,8 @@
       return
     }
     errorDiv.classList.add('hidden')
+
+    fbq && fbq('track', 'Lead')
 
     const fechaRegreso = (form.querySelector('#fecha-regreso') as HTMLInputElement).value
     const msg = encodeURIComponent(
