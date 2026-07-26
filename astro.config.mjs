@@ -3,7 +3,10 @@ import tailwind from '@astrojs/tailwind'
 
 import sitemap from '@astrojs/sitemap'
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
   site: 'https://alianxatravel.com',
-  integrations: [tailwind(), sitemap()]
+  integrations: [tailwind(), sitemap()],
+  adapter: cloudflare()
 })
