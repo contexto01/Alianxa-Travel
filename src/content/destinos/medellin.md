@@ -2,6 +2,7 @@
 nombre: 'Medellín'
 pais: 'Colombia'
 region: 'sudamerica'
+duracion: '4 Días / 3 Noches'
 descripcion: 'La ciudad de la eterna primavera te espera con cultura, café, innovación y experiencias únicas en un plan todo incluido.'
 precioDesde: 649
 moneda: 'USD'
@@ -12,6 +13,21 @@ imagenes:
   - '/medellinIMG/peñol2.webp'
   - '/medellinIMG/welcome.webp'
 tagRegion: 'Colombia'
+planes:
+  - estrellas: 4
+    precio: 649
+    label: 'Recomendado'
+    tag: '🔥 MÁS POPULAR'
+    destacado: true
+  - estrellas: 5
+    precio: 699
+    label: 'Premium'
+    tag: 'Experiencia de Lujo'
+    destacado: false
+tarifaNinos:
+  ceroDos: 'USD $46 (seguro de vuelo obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
 seo:
   title: 'Viajes a Medellín 2025 | Plan Todo Incluido desde $649 USD — Súper Promo'
   description: 'Descubre Medellín con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, tours, Hacienda Nápoles, Guatapé y más. ¡Reserva ahora!'

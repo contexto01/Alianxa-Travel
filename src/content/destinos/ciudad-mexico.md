@@ -2,6 +2,7 @@
 nombre: 'Ciudad de México + Cancún'
 pais: 'México'
 region: 'norteamerica'
+duracion: '7 Días / 6 Noches'
 descripcion: 'Una experiencia completa combinando cultura, historia y playas paradisíacas.'
 precioDesde: 899
 moneda: 'USD'
@@ -12,6 +13,16 @@ imagenes:
   - '/mexicoIMG/2.webp'
   - '/mexicoIMG/3.webp'
 tagRegion: 'México'
+planes:
+  - estrellas: 4
+    precio: 899
+    label: 'Combo Completo'
+    tag: '🔥 CDMX + Cancún Todo Incluido'
+    destacado: true
+tarifaNinos:
+  ceroDos: 'USD $60 (seguro de vuelo obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
 seo:
   title: 'Viaje CDMX y Cancún 2025 | 7 días desde $899'
   description: 'Descubre Ciudad de México y Cancún en un solo viaje con tours completos.'

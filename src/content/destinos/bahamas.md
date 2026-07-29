@@ -3,6 +3,7 @@ nombre: 'Bahamas'
 orden: 6
 pais: 'Bahamas'
 region: 'caribe'
+duracion: '5 Días / 4 Noches'
 descripcion: 'Playas rosadas, aguas cristalinas y experiencias únicas en el Caribe.'
 precioDesde: 718
 moneda: 'USD'
@@ -13,6 +14,21 @@ imagenes:
   - '/bahamaIMG/2.webp'
   - '/bahamaIMG/3.webp'
 tagRegion: 'Caribe'
+planes:
+  - estrellas: 4
+    precio: 718
+    label: 'Recomendado'
+    tag: '🔥 MÁS POPULAR'
+    destacado: true
+  - estrellas: 5
+    precio: 849
+    label: 'Premium'
+    tag: 'Experiencia de Lujo'
+    destacado: false
+tarifaNinos:
+  ceroDos: 'USD $46 (seguro de vuelo obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
 seo:
   title: 'Viajes a Bahamas 2025 | Todo Incluido desde $718 USD'
   description: 'Disfruta Bahamas con Pink Sands Beach, Pig Beach, Atlantis, Nassau y experiencias únicas en el Caribe.'

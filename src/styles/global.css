@@ -21,19 +21,23 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-yellow text-brand-dark font-bold rounded-full transition-all duration-300 hover:bg-yellow-400 hover:scale-105 hover:shadow-lg active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-teal text-white font-bold rounded-full transition-all duration-300 hover:brightness-110 hover:scale-105 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-primary-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-brand-teal text-brand-teal font-bold rounded-full transition-all duration-300 hover:bg-brand-teal hover:text-white hover:scale-105;
   }
 
   .btn-red {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red text-white font-bold rounded-full transition-all duration-300 hover:bg-red-600 hover:scale-105 hover:shadow-lg active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-navy text-white font-bold rounded-full transition-all duration-300 hover:brightness-125 hover:scale-105 hover:shadow-lg active:scale-95;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-bold rounded-full transition-all duration-300 hover:bg-white hover:text-brand-blue hover:scale-105;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-bold rounded-full transition-all duration-300 hover:bg-white hover:text-brand-navy hover:scale-105;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-navy leading-tight;
   }
 
   .section-subtitle {
@@ -45,13 +49,13 @@
   }
 
   .nav-link {
-    @apply relative font-semibold text-gray-700 hover:text-brand-blue transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-blue after:transition-all after:duration-300 hover:after:w-full;
+    @apply relative font-semibold text-gray-700 hover:text-brand-navy transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-navy after:transition-all after:duration-300 hover:after:w-full;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #1a3a7c, #e8323a);
+    background: linear-gradient(135deg, #0A2540, #14b8a6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

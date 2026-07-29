@@ -19,10 +19,10 @@ console.log('Promociones ordenadas:', promocionesOrdenadas.map(p => ({ nombre: p
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div class="text-center mb-14 reveal">
-      <span class="inline-block px-4 py-1.5 bg-brand-yellow/20 text-yellow-700 text-sm font-bold rounded-full mb-4">
+      <span class="inline-block px-4 py-1.5 bg-brand-amber/20 text-amber-700 text-sm font-bold rounded-full mb-4">
         🌟 Promociones de temporada
       </span>
-      <h2 class="section-title">Aprovecha nuestras<br /><span class="text-brand-blue">ofertas especiales</span></h2>
+      <h2 class="section-title">Aprovecha nuestras<br /><span class="text-brand-navy">ofertas especiales</span></h2>
       <p class="section-subtitle">Vive la aventura de tu vida con los mejores paquetes del mercado</p>
     </div>
 
@@ -54,7 +54,7 @@ console.log('Promociones ordenadas:', promocionesOrdenadas.map(p => ({ nombre: p
           <div class="p-5">
             <div class="flex items-baseline gap-1 mb-4">
               <span class="text-gray-400 text-sm">Desde</span>
-              <span class="text-3xl font-black text-brand-red">${promo.data.precio}</span>
+              <span class="text-3xl font-black text-brand-amber">${promo.data.precio}</span>
               <span class="text-gray-400 text-sm">{promo.data.moneda} por persona</span>
             </div>
 
@@ -62,7 +62,7 @@ console.log('Promociones ordenadas:', promocionesOrdenadas.map(p => ({ nombre: p
             <ul class="space-y-1 mb-5">
               {promo.data.incluye.map((item) => (
                 <li class="flex items-center gap-2 text-sm text-gray-600">
-                  <svg class="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <svg class="w-4 h-4 text-brand-teal shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
                   </svg>
                   {item}
@@ -74,7 +74,7 @@ console.log('Promociones ordenadas:', promocionesOrdenadas.map(p => ({ nombre: p
 
               href={`/destinos/${promo.data.slugName}`}
 
-              class="block w-full py-3 bg-brand-yellow text-brand-dark text-center font-black rounded-xl hover:bg-yellow-400 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+              class="block w-full py-3 bg-brand-teal text-white text-center font-black rounded-xl hover:brightness-110 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
               onclick="fbq('track','Lead')"
             >
               Reservar ahora ✈

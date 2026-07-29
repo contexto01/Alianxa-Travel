@@ -18,12 +18,26 @@ const destinosCollection = defineCollection({
       'africa'
     ]),
     descripcion: z.string(),
+    duracion: z.string().optional(),
     precioDesde: z.number(),
     moneda: z.string().default('USD'),
     destacado: z.boolean().default(false),
     imagen: z.string(),
     imagenes: z.array(z.string()).optional(),
     tagRegion: z.string().optional(),
+    planes: z.array(z.object({
+      estrellas: z.number(),
+      precio: z.number(),
+      label: z.string(),
+      tag: z.string(),
+      destacado: z.boolean().default(false)
+    })).optional(),
+    tarifaNinos: z.object({
+      ceroDos: z.string(),
+      tresCuatro: z.string(),
+      seisMas: z.string()
+    }).optional(),
+    noIncluye: z.string().optional(),
     seo: z.object({
       title: z.string(),
       description: z.string(),

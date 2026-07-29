@@ -2,6 +2,7 @@
 nombre: 'Cartagena'
 pais: 'Colombia'
 region: 'caribe'
+duracion: '4 Días / 3 Noches'
 descripcion: 'Historia, playas paradisíacas y experiencias exclusivas en la joya colonial del Caribe colombiano con plan todo incluido.'
 precioDesde: 599
 moneda: 'USD'
@@ -12,6 +13,27 @@ imagenes:
   - '/cartagenaIMG/playa1.webp'
   - '/cartagenaIMG/playa2.webp'
 tagRegion: 'Caribe Colombiano'
+planes:
+  - estrellas: 3
+    precio: 599
+    label: 'Económico'
+    tag: 'Ideal para viajeros prácticos'
+    destacado: false
+  - estrellas: 4
+    precio: 679
+    label: 'Recomendado'
+    tag: '🔥 MÁS POPULAR'
+    destacado: true
+  - estrellas: 5
+    precio: 749
+    label: 'Premium'
+    tag: 'Experiencia de Lujo'
+    destacado: false
+tarifaNinos:
+  ceroDos: 'USD $46 (seguro de vuelo obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
+noIncluye: 'Día adicional disponible. Consulta por extensión de estadía.'
 seo:
   title: 'Viajes a Cartagena 2025 | Plan Todo Incluido desde $599 USD — Súper Promo'
   description: 'Descubre Cartagena con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, cinco islas premium, Bora Bora y más. ¡Reserva ahora!'

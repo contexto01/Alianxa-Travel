@@ -12,6 +12,9 @@ export default {
           600: '#ea580c',
         },
         brand: {
+          navy:   '#0A2540',
+          teal:   '#14b8a6',
+          amber:  '#F59E0B',
           blue:   '#1a3a7c',
           yellow: '#f5c400',
           red:    '#e8323a',

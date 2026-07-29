@@ -2,6 +2,7 @@
 nombre: 'Santa Marta'
 pais: 'Colombia'
 region: 'caribe'
+duracion: '4 Días / 3 Noches'
 descripcion: 'Playas paradisíacas, historia colonial y experiencias únicas en el corazón del Caribe colombiano'
 precioDesde: 409
 moneda: 'USD'
@@ -12,6 +13,27 @@ imagenes:
   - '/santaMartaIMG/Playa.webp'
   - '/santaMartaIMG/Playa2.webp'
 tagRegion: 'Caribe Colombiano'
+planes:
+  - estrellas: 3
+    precio: 409
+    label: 'Económico'
+    tag: 'Ideal para viajeros prácticos'
+    destacado: false
+  - estrellas: 4
+    precio: 458
+    label: 'Recomendado'
+    tag: '🔥 MÁS POPULAR'
+    destacado: true
+  - estrellas: 5
+    precio: 518
+    label: 'Premium'
+    tag: 'Experiencia de Lujo'
+    destacado: false
+tarifaNinos:
+  ceroDos: 'USD $54 (seguro de vuelo obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
+noIncluye: 'Día adicional disponible. Consulta condiciones y tarifas especiales.'
 seo:
   title: 'Viajes a Santa Marta 2025 | Plan Todo Incluido desde $409 USD — Súper Promo'
   description: 'Vive Santa Marta con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, tours, playas paradisíacas y experiencias inolvidables. ¡Cupos limitados!'

@@ -2,6 +2,7 @@
 nombre: 'Cancún'
 pais: 'México'
 region: 'caribe'
+duracion: '5 Días / 4 Noches'
 descripcion: 'Playas de arena blanca, cenotes, cultura maya y parques temáticos en uno de los destinos más famosos del mundo.'
 precioDesde: 799
 moneda: 'USD'
@@ -12,6 +13,21 @@ imagenes:
   - '/cancunIMG/2.webp'
   - '/cancunIMG/3.webp'
 tagRegion: 'Caribe'
+planes:
+  - estrellas: 4
+    precio: 799
+    label: 'Recomendado'
+    tag: '🔥 MÁS POPULAR'
+    destacado: true
+  - estrellas: 5
+    precio: 959
+    label: 'Premium'
+    tag: 'Experiencia de Lujo'
+    destacado: false
+tarifaNinos:
+  ceroDos: 'USD $46 (seguro de vuelo obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
 seo:
   title: 'Viajes a Cancún 2025 | Todo Incluido desde $799 USD'
   description: 'Disfruta Cancún con tours a Xcaret, Chichén Itzá, Cozumel y más.'

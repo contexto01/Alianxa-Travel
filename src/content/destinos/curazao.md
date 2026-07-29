@@ -2,6 +2,7 @@
 nombre: 'Curazao'
 pais: 'Curazao'
 region: 'caribe'
+duracion: '5 Días / 4 Noches'
 descripcion: 'Un paraíso caribeño con playas cristalinas, arquitectura colorida y experiencias únicas.'
 precioDesde: 699
 moneda: 'USD'
@@ -12,6 +13,21 @@ imagenes:
   - '/curazaoIMG/2.webp'
   - '/curazaoIMG/3.webp'
 tagRegion: 'Caribe'
+planes:
+  - estrellas: 4
+    precio: 699
+    label: 'Recomendado'
+    tag: '🔥 MÁS POPULAR'
+    destacado: true
+  - estrellas: 5
+    precio: 899
+    label: 'Premium'
+    tag: 'Experiencia de Lujo'
+    destacado: false
+tarifaNinos:
+  ceroDos: 'USD $50 (seguro de vuelo obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
 seo:
   title: 'Viajes a Curazao 2025 | Todo Incluido desde $699 USD'
   description: 'Explora Curazao con playas cristalinas, Klein Curazao, Sea Aquarium, Willemstad y experiencias únicas en el Caribe.'

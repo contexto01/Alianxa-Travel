@@ -2,6 +2,7 @@
 nombre: 'Viajes a San Andrés'
 pais: 'Colombia'
 region: 'caribe'
+duracion: '5 Días / 4 Noches'
 descripcion: 'El mar de los siete colores, playas de arena blanca y aventuras únicas en un plan todo incluido en el Caribe colombiano.'
 precioDesde: 620
 moneda: 'USD'
@@ -12,6 +13,27 @@ imagenes:
   - '/sanAndresIMG/playa2.webp'
   - '/sanAndresIMG/playa3.webp'
 tagRegion: 'Caribe Colombiano'
+planes:
+  - estrellas: 3
+    precio: 620
+    label: 'Económico'
+    tag: 'Ideal para viajeros prácticos'
+    destacado: false
+  - estrellas: 4
+    precio: 690
+    label: 'Recomendado'
+    tag: '🔥 MÁS POPULAR'
+    destacado: true
+  - estrellas: 5
+    precio: 750
+    label: 'Premium'
+    tag: 'Experiencia de Lujo'
+    destacado: false
+tarifaNinos:
+  ceroDos: 'USD $54 (seguro de vuelo obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
+noIncluye: 'Tarjeta de turismo de ingreso a la isla: USD $48 por pasajero (se paga en el aeropuerto).'
 seo:
   title: 'Viajes a San Andrés 2025 | Plan Todo Incluido desde $620 USD — Súper Promo'
   description: 'Vive San Andrés con un plan todo incluido de 5 días y 4 noches. Vuelos, hotel, tours marinos, catamarán, Johnny Cay y más. ¡Reserva ahora!'
