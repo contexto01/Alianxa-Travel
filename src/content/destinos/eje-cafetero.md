@@ -37,6 +37,23 @@ tarifaNinos:
   ceroDos: 'USD $46 (seguro de vuelo obligatorio)'
   tresCuatro: '50% del valor del plan'
   seisMas: 'Tarifa completa'
+tarifaNinosCOP:
+  ceroDos: 'COP $145.000 (seguro obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
+tours:
+  - nombre: 'Salento y Valle del Cocora'
+    descripcion: 'Camina entre las palmeras de cera más altas del mundo en este valle declarado Patrimonio de la Humanidad.'
+    imagen: '/ejeCafeteroIMG/1.webp'
+  - nombre: 'Termales de Santa Rosa'
+    descripcion: 'Relájate en aguas termales naturales rodeado de montañas y vegetación tropical.'
+    imagen: '/ejeCafeteroIMG/2.webp'
+  - nombre: 'Parque Nacional del Café'
+    descripcion: 'Parque temático con atracciones mecánicas, shows culturales y el mundo del café colombiano.'
+    imagen: '/ejeCafeteroIMG/3.webp'
+  - nombre: 'PANACA'
+    descripcion: 'Parque de la Cultura Agropecuaria con experiencias interactivas de campo, naturaleza y sostenibilidad.'
+    imagen: '/ejeCafeteroIMG/portada.webp'
 seo:
   title: 'Viajes al Eje Cafetero 2025 | Plan Todo Incluido desde $1.890.000 COP'
   description: 'Descubre Salento, Valle del Cocora, Termales de Santa Rosa, Parque del Café y Panaca en un plan todo incluido.'
@@ -44,23 +61,3 @@ cta:
   texto: 'Quiero esta promo al Eje Cafetero'
   whatsapp: 'Hola!%20Quiero%20información%20de%20la%20promo%20al%20Eje%20Cafetero'
 ---
-
----
-
-## Incluye
-
-- Hospedaje
-- Alimentación buffet
-- Snacks y bebidas
-- Vuelos
-- Traslados
-
----
-
-## Tours
-
-- Salento
-- Valle del Cocora
-- Termales Santa Rosa
-- Parque del Café
-- Panaca

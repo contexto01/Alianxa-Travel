@@ -39,6 +39,17 @@ const destinosCollection = defineCollection({
       tresCuatro: z.string(),
       seisMas: z.string()
     }).optional(),
+    tarifaNinosCOP: z.object({
+      ceroDos: z.string(),
+      tresCuatro: z.string(),
+      seisMas: z.string()
+    }).optional(),
+    maletaAdicional: z.string().optional(),
+    tours: z.array(z.object({
+      nombre: z.string(),
+      descripcion: z.string(),
+      imagen: z.string().optional()
+    })).optional(),
     noIncluye: z.string().optional(),
     seo: z.object({
       title: z.string(),

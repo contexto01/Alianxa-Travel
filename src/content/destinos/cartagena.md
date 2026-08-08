@@ -37,6 +37,24 @@ tarifaNinos:
   ceroDos: 'USD $46 (seguro de vuelo obligatorio)'
   tresCuatro: '50% del valor del plan'
   seisMas: 'Tarifa completa'
+tarifaNinosCOP:
+  ceroDos: 'COP $145.000 (seguro obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
+maletaAdicional: 'Maleta adicional 23 kg por solo USD $39'
+tours:
+  - nombre: 'Tour Cinco Islas Premium'
+    descripcion: 'Recorre 5 islas paradisíacas del Caribe colombiano con almuerzo incluido en cada parada.'
+    imagen: '/cartagenaIMG/playa1.webp'
+  - nombre: 'Ciudad Amurallada'
+    descripcion: 'Camina por las calles coloniales más hermosas de América Latina, Patrimonio de la Humanidad.'
+    imagen: '/cartagenaIMG/promocion.webp'
+  - nombre: 'Club de Playa Bora Bora'
+    descripcion: 'Día completo de playa, volcán de lodo medicinal y diversión total en el Caribe.'
+    imagen: '/cartagenaIMG/playa2.webp'
+  - nombre: 'Tour Nocturno Bus Chivero'
+    descripcion: 'Fiesta rodante con luces, música, bebidas y snacks por toda Cartagena de noche.'
+    imagen: '/cartagenaIMG/portada.webp'
 noIncluye: 'Día adicional disponible. Consulta por extensión de estadía.'
 seo:
   title: 'Viajes a Cartagena 2025 | Plan Todo Incluido desde $1.890.000 COP — Súper Promo'
@@ -52,45 +70,4 @@ cta:
   whatsapp: 'Hola!%20Quiero%20información%20de%20la%20Súper%20Promo%20a%20Cartagena%20🏝️✈️'
 ---
 
-Vive la magia de **Cartagena de Indias**, la joya colonial del Caribe colombiano. Historia, playas cristalinas, vida nocturna vibrante y experiencias premium en un solo plan diseñado para disfrutar sin preocupaciones.
-
----
-
-## ✅ ¿Qué incluye este plan?
-
-- 🏨 **Hospedaje 4 días / 3 noches**
-- 🍽️ **Alimentación completa tipo buffet**  
-  _(Desayuno, almuerzo y cena durante toda la estadía)_
-- 🍹 **Snacks y bebidas ilimitadas**
-- 🏨 **Impuestos hoteleros incluidos**
-- ✈️ **Tiquetes aéreos ida y regreso**  
-  Latam, Avianca, Wingo o Copa Airlines  
-  _(Equipaje de mano 10 kg incluido)_
-- 🧳 **Maleta adicional 23 kg** por solo **USD 39**
-- 🚐 **Traslados Aeropuerto – Hotel – Aeropuerto**
-
----
-
-## 🌊 Tours y experiencias incluidas
-
-- 🏝️ **Tour día completo Cinco Islas Premium**  
-  _(Según su elección – Almuerzo incluido)_
-- 🏛️ **Tour Centro Histórico y Ciudad Amurallada**
-- 🌴 **Club de Playa Bora Bora + Volcán de Lodo Medicinal**  
-  _(Experiencia día completo)_
-- 🎉 **Tour nocturno en bus chivero**  
-  _(Luces, música, bebidas y snacks incluidos)_
-
-🧭 **Guía acompañante especialista bilingüe en todos los tours**
-
----
-
-## ⚠️ Día adicional disponible
-
-Consulta por extensión de estadía y personaliza tu experiencia en el Caribe.
-
----
-
-✨ **CUPOS LIMITADOS** ✨  
-📲 Reserva ahora y vive Cartagena como nunca antes  
-💬 Escríbenos y asegura tu lugar hoy
+Consulta por extensión de estadía y personaliza tu experiencia en el Caribe con un día adicional.

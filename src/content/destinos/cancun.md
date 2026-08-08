@@ -31,6 +31,27 @@ tarifaNinos:
   ceroDos: 'USD $46 (seguro de vuelo obligatorio)'
   tresCuatro: '50% del valor del plan'
   seisMas: 'Tarifa completa'
+tarifaNinosCOP:
+  ceroDos: 'COP $145.000 (seguro obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
+maletaAdicional: 'Maleta adicional 23 kg por solo USD $39'
+tours:
+  - nombre: 'Catamarán a Playa del Carmen'
+    descripcion: 'Navega por el Caribe mexicano hasta la vibrante Playa del Carmen con su Quinta Avenida.'
+    imagen: '/cancunIMG/1.webp'
+  - nombre: 'Xcaret Plus'
+    descripcion: 'El parque eco-arqueológico más famoso de México con ríos subterráneos, cultura maya y show nocturno.'
+    imagen: '/cancunIMG/2.webp'
+  - nombre: 'Chichén Itzá + Cenote'
+    descripcion: 'Visita una de las 7 maravillas del mundo moderno y nada en un cenote sagrado maya.'
+    imagen: '/cancunIMG/3.webp'
+  - nombre: 'Snorkel en Cozumel'
+    descripcion: 'Explora los arrecifes de coral más espectaculares del Caribe en la isla de Cozumel.'
+    imagen: '/cancunIMG/1.webp'
+  - nombre: 'Interacción con Delfines'
+    descripcion: 'Nada con delfines en un encuentro guiado en las aguas cristalinas de la Riviera Maya.'
+    imagen: '/cancunIMG/2.webp'
 seo:
   title: 'Viajes a Cancún 2025 | Todo Incluido desde $2.490.000 COP'
   description: 'Disfruta Cancún con tours a Xcaret, Chichén Itzá, Cozumel y más.'
@@ -38,28 +59,3 @@ cta:
   texto: 'Quiero esta promo a Cancún'
   whatsapp: 'Hola! Quiero información de la promo a Cancún'
 ---
-
----
-
-## ✅ Incluye
-
-- Hospedaje 5 días / 4 noches
-- Alimentación buffet
-- Snacks y bebidas ilimitadas
-- Vuelos ida y regreso
-- Traslados aeropuerto
-- Equipaje de mano 10kg
-
-Maleta adicional: USD 39
-
----
-
-## 🌴 Tours incluidos
-
-- Catamarán **Playa del Carmen**
-- **Xcaret Plus**
-- **Chichén Itzá + Cenote**
-- Snorkel **Cozumel**
-- Interacción con **delfines**
-- Asistencia médica
-- Guía bilingüe

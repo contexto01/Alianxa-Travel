@@ -37,6 +37,27 @@ tarifaNinos:
   ceroDos: 'USD $54 (seguro de vuelo obligatorio)'
   tresCuatro: '50% del valor del plan'
   seisMas: 'Tarifa completa'
+tarifaNinosCOP:
+  ceroDos: 'COP $170.000 (seguro obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
+maletaAdicional: 'Maleta adicional 23 kg por solo USD $39'
+tours:
+  - nombre: 'Tour a Playa Blanca'
+    descripcion: 'Una de las playas más hermosas del Caribe colombiano con arena blanca y aguas turquesas.'
+    imagen: '/santaMartaIMG/Playa.webp'
+  - nombre: 'Centro Histórico y Quinta de Bolívar'
+    descripcion: 'Recorre la ciudad colonial más antigua de Colombia y la casa histórica de Simón Bolívar.'
+    imagen: '/santaMartaIMG/Elrodadero2.webp'
+  - nombre: 'Acuario Marine World'
+    descripcion: 'Mundo Marino con show de delfines, acuarios interactivos y experiencias únicas con la fauna marina.'
+    imagen: '/santaMartaIMG/Playa2.webp'
+  - nombre: 'Tour a Playa Cristal'
+    descripcion: 'Crystal Beach, una joya escondida del Caribe con aguas transparentes perfectas para snorkel.'
+    imagen: '/santaMartaIMG/Playa.webp'
+  - nombre: 'Fiesta Blanca en Catamarán'
+    descripcion: 'Noche de fiesta en catamarán con DJ, barra libre y vistas espectaculares de la bahía.'
+    imagen: '/santaMartaIMG/promocion.webp'
 noIncluye: 'Día adicional disponible. Consulta condiciones y tarifas especiales.'
 seo:
   title: 'Viajes a Santa Marta 2025 | Plan Todo Incluido desde $1.290.000 COP — Súper Promo'
@@ -51,44 +72,3 @@ cta:
   texto: 'Quiero esta Súper Promo a Santa Marta'
   whatsapp: 'Hola!%20Quiero%20información%20de%20la%20Súper%20Promo%20a%20Santa%20Marta%20🏖️✈️'
 ---
-
-Disfruta el **Caribe colombiano como nunca antes**.  
-Santa Marta te espera con playas de ensueño, historia, diversión y experiencias únicas en un plan diseñado para que **no te preocupes por nada**.
-
----
-
-## ✅ ¿Qué incluye este plan?
-
-- 🏨 **Hospedaje 4 días / 3 noches**
-- 🍽️ **Alimentación completa tipo buffet**  
-  _(Desayuno, almuerzo y cena durante toda la estadía)_
-- 🍹 **Snacks y bebidas ilimitadas**
-- 🏨 **Impuestos hoteleros incluidos**
-- ✈️ **Tiquetes aéreos ida y regreso**  
-  Aerolíneas: Latam, Avianca, Wingo o Copa Airlines  
-  _(Equipaje de mano 10 kg incluido)_
-- 🧳 **Maleta adicional 23 kg** por solo **USD 39**
-- 🚐 **Traslados Aeropuerto – Hotel – Aeropuerto**
-
----
-
-## 🌊 Tours y experiencias incluidas
-
-- 🏖️ **Tour a Playa Blanca**
-- 🏛️ **Tour al Centro Histórico de Santa Marta**  
-  _(Incluye visita a la Quinta de Bolívar)_
-- 🐬 **Acuario Marine World**  
-  _(Mundo Marino + show de delfines)_
-- 💎 **Tour a Playa Cristal (Crystal Beach)**
-- ⛵ **Fiesta Blanca nocturna en Catamarán**
-
----
-
-⚠️ **DÍA ADICIONAL DISPONIBLE**  
-Consulta condiciones y tarifas especiales.
-
----
-
-✨ **CUPOS LIMITADOS** ✨  
-📲 Reserva ahora y vive **Santa Marta al máximo**  
-💬 Escríbenos y asegura tu lugar hoy

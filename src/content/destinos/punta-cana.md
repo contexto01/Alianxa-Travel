@@ -25,6 +25,24 @@ tarifaNinos:
   ceroDos: 'USD $46 (seguro de vuelo obligatorio)'
   tresCuatro: '50% del valor del plan'
   seisMas: 'Tarifa completa'
+tarifaNinosCOP:
+  ceroDos: 'COP $145.000 (seguro obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
+maletaAdicional: 'Maleta adicional 23 kg por solo USD $39'
+tours:
+  - nombre: 'Isla Saona en Catamarán'
+    descripcion: 'Navega en catamarán con barra libre hasta la isla más paradisíaca de República Dominicana.'
+    imagen: '/puntaCanaIMG/1.webp'
+  - nombre: 'Scape Park / Dorado Park'
+    descripcion: 'Parque de aventura con tirolesas, cenotes, piscinas naturales y experiencias ecológicas.'
+    imagen: '/puntaCanaIMG/2.webp'
+  - nombre: 'Buggy a Cueva del Agua y Playa Macao'
+    descripcion: 'Conduce un buggy por selvas tropicales hasta cuevas subterráneas y playas vírgenes.'
+    imagen: '/puntaCanaIMG/3.webp'
+  - nombre: 'Coco Bongo Golden Ticket'
+    descripcion: 'El show más espectacular del Caribe con acrobacias, música en vivo y acceso VIP.'
+    imagen: '/puntaCanaIMG/portada.webp'
 seo:
   title: 'Viajes a Punta Cana 2025 | Todo Incluido desde $2.790.000 COP'
   description: 'Disfruta Punta Cana con plan todo incluido, hotel 5 estrellas, Isla Saona, Scape Park, Coco Bongo y más.'
@@ -32,28 +50,3 @@ cta:
   texto: 'Quiero esta promo a Punta Cana'
   whatsapp: 'Hola! Quiero información de la promo a Punta Cana'
 ---
-
----
-
-## ✅ Incluye
-
-- Hospedaje **5 días / 4 noches**
-- Alimentación buffet completa
-- Snacks y bebidas ilimitadas
-- Impuestos hoteleros
-- Vuelos ida y regreso
-- Equipaje de mano 10kg
-- Traslados aeropuerto-hotel
-
-Maleta adicional 23kg: **USD 39**
-
----
-
-## 🌴 Tours incluidos
-
-- Isla **Saona en catamarán** con barra libre
-- **Scape Park / Dorado Park**
-- Buggy a **Cueva del Agua y Playa Macao**
-- Museo del cacao
-- **Coco Bongo Golden Ticket**
-- Guía especializado

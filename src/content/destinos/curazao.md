@@ -31,6 +31,26 @@ tarifaNinos:
   ceroDos: 'USD $50 (seguro de vuelo obligatorio)'
   tresCuatro: '50% del valor del plan'
   seisMas: 'Tarifa completa'
+tarifaNinosCOP:
+  ceroDos: 'COP $160.000 (seguro obligatorio)'
+  tresCuatro: '50% del valor del plan'
+  seisMas: 'Tarifa completa'
+tours:
+  - nombre: 'Willemstad'
+    descripcion: 'Recorre la capital Patrimonio de la Humanidad con sus icónicas casas de colores frente al canal.'
+    imagen: '/curazaoIMG/1.webp'
+  - nombre: 'Puente Reina Emma'
+    descripcion: 'Camina por el famoso puente flotante que conecta los dos lados del canal de Santa Ana.'
+    imagen: '/curazaoIMG/2.webp'
+  - nombre: 'Klein Curazao'
+    descripcion: 'Excursión de día completo a la isla desierta más paradisíaca del Caribe con snorkel y naufragio.'
+    imagen: '/curazaoIMG/3.webp'
+  - nombre: 'Sea Aquarium Park'
+    descripcion: 'Acuario marino con delfines, tortugas y leones marinos en un entorno natural de lagunas.'
+    imagen: '/curazaoIMG/1.webp'
+  - nombre: 'Westpunt y Playa Lagun'
+    descripcion: 'Explora el lado salvaje de la isla con acantilados, playas secretas y tortugas marinas.'
+    imagen: '/curazaoIMG/portada.webp'
 seo:
   title: 'Viajes a Curazao 2025 | Todo Incluido desde $2.190.000 COP'
   description: 'Explora Curazao con playas cristalinas, Klein Curazao, Sea Aquarium, Willemstad y experiencias únicas en el Caribe.'
@@ -38,25 +58,3 @@ cta:
   texto: 'Quiero esta promo a Curazao'
   whatsapp: 'Hola!%20Quiero%20información%20de%20la%20promo%20a%20Curazao'
 ---
-
----
-
-## 🌴 Incluye
-
-- Hospedaje
-- Alimentación buffet
-- Snacks y bebidas ilimitadas
-- Vuelos ida y regreso
-- Traslados aeropuerto
-
----
-
-## Tours incluidos
-
-- Willemstad
-- Puente Reina Emma
-- Pietermaai
-- Westpunt
-- Klein Curazao
-- Sea Aquarium Park
-- Licor Curazao Factory
