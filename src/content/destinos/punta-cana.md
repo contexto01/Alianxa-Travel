@@ -5,6 +5,7 @@ region: 'caribe'
 duracion: '5 Días / 4 Noches'
 descripcion: 'Resorts 5 estrellas, playas paradisíacas y experiencias premium en uno de los destinos más exclusivos del Caribe.'
 precioDesde: 880
+precioDesdeCOP: 2790000
 moneda: 'USD'
 destacado: true
 imagen: '/puntaCanaIMG/portada.webp'
@@ -16,6 +17,7 @@ tagRegion: 'Caribe'
 planes:
   - estrellas: 5
     precio: 880
+    precioCOP: 2790000
     label: 'Premium'
     tag: 'Resort 5 Estrellas Todo Incluido'
     destacado: true
@@ -24,7 +26,7 @@ tarifaNinos:
   tresCuatro: '50% del valor del plan'
   seisMas: 'Tarifa completa'
 seo:
-  title: 'Viajes a Punta Cana 2025 | Todo Incluido desde $880 USD'
+  title: 'Viajes a Punta Cana 2025 | Todo Incluido desde $2.790.000 COP'
   description: 'Disfruta Punta Cana con plan todo incluido, hotel 5 estrellas, Isla Saona, Scape Park, Coco Bongo y más.'
 cta:
   texto: 'Quiero esta promo a Punta Cana'
@@ -36,12 +38,6 @@ cta:
 ### 5 DÍAS · 4 NOCHES · TODO INCLUIDO
 
 🔥 **Desde USD 880 por persona**
-
----
-
-## 💰 Precio
-
-🏨 **Hotel 5 ⭐⭐⭐⭐⭐** desde **USD 880**
 
 ---
 

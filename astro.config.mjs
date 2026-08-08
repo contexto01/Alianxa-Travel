@@ -4,6 +4,6 @@ import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
-  site: 'https://alianxatravel.com',
+  site: 'https://alianxatravel.org',
   integrations: [tailwind(), sitemap()]
 })

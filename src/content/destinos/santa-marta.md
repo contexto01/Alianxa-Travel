@@ -5,6 +5,7 @@ region: 'caribe'
 duracion: '4 Días / 3 Noches'
 descripcion: 'Playas paradisíacas, historia colonial y experiencias únicas en el corazón del Caribe colombiano'
 precioDesde: 409
+precioDesdeCOP: 1290000
 moneda: 'USD'
 destacado: true
 imagen: '/santaMartaIMG/Elrodadero2.webp'
@@ -16,16 +17,19 @@ tagRegion: 'Caribe Colombiano'
 planes:
   - estrellas: 3
     precio: 409
+    precioCOP: 1290000
     label: 'Económico'
     tag: 'Ideal para viajeros prácticos'
     destacado: false
   - estrellas: 4
     precio: 458
+    precioCOP: 1450000
     label: 'Recomendado'
     tag: '🔥 MÁS POPULAR'
     destacado: true
   - estrellas: 5
     precio: 518
+    precioCOP: 1650000
     label: 'Premium'
     tag: 'Experiencia de Lujo'
     destacado: false
@@ -35,7 +39,7 @@ tarifaNinos:
   seisMas: 'Tarifa completa'
 noIncluye: 'Día adicional disponible. Consulta condiciones y tarifas especiales.'
 seo:
-  title: 'Viajes a Santa Marta 2025 | Plan Todo Incluido desde $409 USD — Súper Promo'
+  title: 'Viajes a Santa Marta 2025 | Plan Todo Incluido desde $1.290.000 COP — Súper Promo'
   description: 'Vive Santa Marta con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, tours, playas paradisíacas y experiencias inolvidables. ¡Cupos limitados!'
   keywords:
     - 'viajes a santa marta'
@@ -56,14 +60,6 @@ cta:
 
 Disfruta el **Caribe colombiano como nunca antes**.  
 Santa Marta te espera con playas de ensueño, historia, diversión y experiencias únicas en un plan diseñado para que **no te preocupes por nada**.
-
----
-
-## 💰 Precios por persona
-
-- 🏨 **Hotel 3 ⭐⭐⭐** desde **USD 409**
-- 🏨 **Hotel 4 ⭐⭐⭐⭐** desde **USD 458**
-- 🏨 **Hotel 5 ⭐⭐⭐⭐⭐** desde **USD 518**
 
 ---
 

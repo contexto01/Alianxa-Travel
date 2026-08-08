@@ -5,6 +5,7 @@ region: 'caribe'
 duracion: '4 Días / 3 Noches'
 descripcion: 'Historia, playas paradisíacas y experiencias exclusivas en la joya colonial del Caribe colombiano con plan todo incluido.'
 precioDesde: 599
+precioDesdeCOP: 1890000
 moneda: 'USD'
 destacado: true
 imagen: '/cartagenaIMG/portada.webp'
@@ -16,16 +17,19 @@ tagRegion: 'Caribe Colombiano'
 planes:
   - estrellas: 3
     precio: 599
+    precioCOP: 1890000
     label: 'Económico'
     tag: 'Ideal para viajeros prácticos'
     destacado: false
   - estrellas: 4
     precio: 679
+    precioCOP: 2150000
     label: 'Recomendado'
     tag: '🔥 MÁS POPULAR'
     destacado: true
   - estrellas: 5
     precio: 749
+    precioCOP: 2350000
     label: 'Premium'
     tag: 'Experiencia de Lujo'
     destacado: false
@@ -35,7 +39,7 @@ tarifaNinos:
   seisMas: 'Tarifa completa'
 noIncluye: 'Día adicional disponible. Consulta por extensión de estadía.'
 seo:
-  title: 'Viajes a Cartagena 2025 | Plan Todo Incluido desde $599 USD — Súper Promo'
+  title: 'Viajes a Cartagena 2025 | Plan Todo Incluido desde $1.890.000 COP — Súper Promo'
   description: 'Descubre Cartagena con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, cinco islas premium, Bora Bora y más. ¡Reserva ahora!'
   keywords:
     - 'viajes a cartagena'
@@ -55,14 +59,6 @@ cta:
 🔥 **Desde USD 599 por persona** 🔥
 
 Vive la magia de **Cartagena de Indias**, la joya colonial del Caribe colombiano. Historia, playas cristalinas, vida nocturna vibrante y experiencias premium en un solo plan diseñado para disfrutar sin preocupaciones.
-
----
-
-## 💰 Precios por persona
-
-- 🏨 **Hotel 3 ⭐⭐⭐** desde **USD 599**
-- 🏨 **Hotel 4 ⭐⭐⭐⭐** desde **USD 679**
-- 🏨 **Hotel 5 ⭐⭐⭐⭐⭐** desde **USD 749**
 
 ---
 

@@ -5,6 +5,7 @@ region: 'sudamerica'
 duracion: '5 Días / 4 Noches'
 descripcion: 'Naturaleza, cultura cafetera y paisajes únicos en el corazón de Colombia.'
 precioDesde: 599
+precioDesdeCOP: 1890000
 moneda: 'USD'
 destacado: true
 imagen: '/ejeCafeteroIMG/portada.webp'
@@ -16,16 +17,19 @@ tagRegion: 'Colombia'
 planes:
   - estrellas: 3
     precio: 599
+    precioCOP: 1890000
     label: 'Económico'
     tag: 'Ideal para viajeros prácticos'
     destacado: false
   - estrellas: 4
     precio: 679
+    precioCOP: 2150000
     label: 'Recomendado'
     tag: '🔥 MÁS POPULAR'
     destacado: true
   - estrellas: 5
     precio: 789
+    precioCOP: 2490000
     label: 'Premium'
     tag: 'Experiencia de Lujo'
     destacado: false
@@ -34,7 +38,7 @@ tarifaNinos:
   tresCuatro: '50% del valor del plan'
   seisMas: 'Tarifa completa'
 seo:
-  title: 'Viajes al Eje Cafetero 2025 | Plan Todo Incluido desde $599 USD'
+  title: 'Viajes al Eje Cafetero 2025 | Plan Todo Incluido desde $1.890.000 COP'
   description: 'Descubre Salento, Valle del Cocora, Termales de Santa Rosa, Parque del Café y Panaca en un plan todo incluido.'
 cta:
   texto: 'Quiero esta promo al Eje Cafetero'
@@ -46,14 +50,6 @@ cta:
 ### 5 DÍAS · 4 NOCHES
 
 🔥 Desde **USD 599**
-
----
-
-## Precios
-
-Hotel 3 ⭐⭐⭐ — 599  
-Hotel 4 ⭐⭐⭐⭐ — 679  
-Hotel 5 ⭐⭐⭐⭐⭐ — 789
 
 ---
 

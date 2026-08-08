@@ -20,6 +20,7 @@ const destinosCollection = defineCollection({
     descripcion: z.string(),
     duracion: z.string().optional(),
     precioDesde: z.number(),
+    precioDesdeCOP: z.number().optional(),
     moneda: z.string().default('USD'),
     destacado: z.boolean().default(false),
     imagen: z.string(),
@@ -28,6 +29,7 @@ const destinosCollection = defineCollection({
     planes: z.array(z.object({
       estrellas: z.number(),
       precio: z.number(),
+      precioCOP: z.number().optional(),
       label: z.string(),
       tag: z.string(),
       destacado: z.boolean().default(false)

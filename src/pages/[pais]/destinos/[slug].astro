@@ -1,0 +1,519 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content'
+import Layout from '../../../layouts/Layout.astro'
+import Header from '../../../components/Header.astro'
+import Footer from '../../../components/Footer.astro'
+import WhatsAppFloat from '../../../components/WhatsAppFloat.astro'
+
+export async function getStaticPaths() {
+  const paises = ['co', 'ec'] as const
+  const destinos = await getCollection('destinos')
+  return paises.flatMap((pais) =>
+    destinos.map((destino) => ({
+      params: { pais, slug: destino.slug },
+      props: { destino, pais }
+    }))
+  )
+}
+
+type Props = {
+  destino: CollectionEntry<'destinos'>
+  pais: string
+}
+
+const { destino, pais } = Astro.props
+const { Content } = await destino.render()
+
+const isCOP = pais === 'co'
+
+function getPrecio(planPrecio: number, planPrecioCOP?: number): number {
+  return isCOP && planPrecioCOP ? planPrecioCOP : planPrecio
+}
+
+function getPrecioDesde(): number {
+  return isCOP && destino.data.precioDesdeCOP ? destino.data.precioDesdeCOP : destino.data.precioDesde
+}
+
+function formatPrice(value: number): string {
+  return isCOP ? value.toLocaleString('es-CO') : String(value)
+}
+
+const monedaLabel = isCOP ? 'COP' : 'USD'
+const precioDesdeDisplay = getPrecioDesde()
+
+const whatsappBase = isCOP
+  ? `Hola!%20Quiero%20información%20del%20viaje%20a%20${encodeURIComponent(destino.data.nombre)}%20desde%20%24${precioDesdeDisplay.toLocaleString('es-CO')}%20COP`
+  : destino.data.cta.whatsapp
+
+const whatsappURL = `https://wa.me/573246250212?text=${whatsappBase}`
+
+function whatsappPlan(stars: number, precio: number) {
+  const moneda = isCOP ? 'COP' : 'USD'
+  const precioStr = isCOP ? `$${precio.toLocaleString('es-CO')}` : `$${precio}`
+  const msg = encodeURIComponent(`Hola! Quiero información del plan Hotel ${stars} Estrellas a ${destino.data.nombre} por ${moneda} ${precioStr} 🏝️✈️`)
+  return `https://wa.me/573246250212?text=${msg}`
+}
+
+const locale = isCOP ? 'es_CO' : 'es_EC'
+
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'TouristDestination',
+  name: destino.data.nombre,
+  description: destino.data.descripcion,
+  image: destino.data.imagen,
+  touristType: ['familias', 'parejas', 'aventura'],
+  containedInPlace: {
+    '@type': 'Country',
+    name: destino.data.pais
+  },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: monedaLabel,
+    price: precioDesdeDisplay,
+    availability: 'https://schema.org/InStock'
+  }
+})
+
+const seoTitle = isCOP
+  ? destino.data.seo.title
+  : destino.data.seo.title.replace(/\$[\d.,]+\s*COP/i, `$${destino.data.precioDesde} USD`)
+---
+
+<Layout
+  title={seoTitle}
+  description={destino.data.seo.description}
+  ogImage={destino.data.imagen}
+  locale={locale}
+>
+  <Header />
+
+  <main class="bg-slate-50">
+
+    <!-- A. HERO -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src={destino.data.imagen}
+          alt={`Viajes a ${destino.data.nombre}`}
+          class="w-full h-full object-cover"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-brand-navy/85 to-brand-navy/90"></div>
+      </div>
+
+      <div class="relative z-10 max-w-5xl mx-auto px-6 text-center text-white pt-32 pb-20">
+        {destino.data.tagRegion && (
+          <span class="inline-block px-4 py-1.5 bg-brand-amber/20 border border-brand-amber/40 text-brand-amber rounded-full text-xs font-bold mb-6">
+            🌴 PLAN TODO INCLUIDO · {destino.data.tagRegion.toUpperCase()}
+          </span>
+        )}
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-4">
+          Viajes a {destino.data.nombre}
+        </h1>
+        {destino.data.duracion && (
+          <p class="text-xl md:text-2xl text-white/80 font-semibold mb-3">
+            {destino.data.duracion} — Todo Incluido
+          </p>
+        )}
+        <p class="text-base md:text-lg text-white/60 max-w-2xl mx-auto mb-10">
+          {destino.data.descripcion}
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 text-xs md:text-sm mb-6">
+          <span class="bg-white/10 backdrop-blur px-4 py-2 rounded-full font-semibold">+10 años de experiencia</span>
+          <span class="bg-white/10 backdrop-blur px-4 py-2 rounded-full font-semibold">+5.000 viajeros felices</span>
+          <span class="bg-white/10 backdrop-blur px-4 py-2 rounded-full font-semibold">Agencia Certificada IATA & ANATO</span>
+        </div>
+
+        <p class="text-brand-amber font-bold text-sm mb-8 animate-pulse-slow">
+          🔥 CUPOS LIMITADOS — Reserva antes de que se agoten
+        </p>
+
+        <div class="flex flex-col items-center gap-4">
+          <div class="bg-white/10 backdrop-blur rounded-2xl px-10 py-5 border border-white/20 inline-block">
+            <p class="text-xs text-white/60 mb-1">DESDE</p>
+            <p class="text-6xl md:text-7xl font-black text-brand-amber leading-none">{isCOP ? '$' : '$'}{formatPrice(precioDesdeDisplay)}</p>
+            <p class="text-sm text-white/60 mt-1">{monedaLabel} / persona</p>
+          </div>
+
+          <a
+            href={whatsappURL}
+            target="_blank"
+            rel="noopener"
+            onclick="fbq('track','Lead')"
+            class="inline-flex items-center gap-3 px-10 py-5 bg-brand-teal text-white font-black text-lg rounded-full hover:brightness-110 hover:scale-105 transition-all shadow-xl mt-4"
+          >
+            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.535 5.845L0 24l6.335-1.533C8.049 23.455 9.982 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.807 0-3.496-.487-4.951-1.335l-.355-.21-3.76.91.951-3.659-.232-.375C2.49 15.583 2 13.848 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+            </svg>
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- B. GALERÍA -->
+    {destino.data.imagenes && destino.data.imagenes.length > 0 && (
+      <section class="py-14 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid md:grid-cols-3 gap-4">
+            {destino.data.imagenes!.map((img, i) => (
+              <div class="rounded-2xl overflow-hidden h-64 shadow-card">
+                <img
+                  src={img}
+                  alt={`${destino.data.nombre} ${i + 1}`}
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- C. PLANES DE ALOJAMIENTO -->
+    {destino.data.planes && destino.data.planes.length > 0 && (
+      <section id="planes" class="py-20 lg:py-28 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-14 reveal">
+            <span class="inline-block px-4 py-1.5 bg-brand-amber/20 text-amber-700 text-sm font-bold rounded-full mb-4">
+              🏨 Elige tu plan
+            </span>
+            <h2 class="section-title">Planes de Alojamiento<br />Todo Incluido</h2>
+            <p class="section-subtitle">Selecciona el hotel ideal para tu experiencia en {destino.data.nombre}</p>
+          </div>
+
+          <div class={`grid gap-6 lg:gap-8 ${
+            destino.data.planes!.length === 1 ? 'max-w-md mx-auto' :
+            destino.data.planes!.length === 2 ? 'md:grid-cols-2 max-w-3xl mx-auto' :
+            'md:grid-cols-3'
+          }`}>
+            {destino.data.planes!.map((plan) => {
+              const displayPrecio = getPrecio(plan.precio, plan.precioCOP)
+              return (
+              <article
+                class={`reveal bg-white rounded-2xl shadow-card border-2 transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover ${
+                  plan.destacado
+                    ? 'border-brand-amber shadow-xl ring-2 ring-brand-amber/20 relative'
+                    : 'border-slate-200'
+                }`}
+              >
+                {plan.destacado && (
+                  <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-amber text-white text-xs font-black px-5 py-1.5 rounded-full shadow-lg badge-pulse whitespace-nowrap">
+                    {plan.tag}
+                  </div>
+                )}
+
+                <div class={`text-center ${plan.destacado ? 'pt-8' : 'pt-4'} pb-6 px-6 md:px-8`}>
+                  <div class="text-3xl mb-3">
+                    {'⭐'.repeat(plan.estrellas)}
+                  </div>
+                  <h3 class="text-xl font-extrabold text-brand-navy mb-1">
+                    Hotel {plan.estrellas} ★ — {plan.label}
+                  </h3>
+                  <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-6">
+                    {plan.destacado ? '' : plan.tag}
+                  </p>
+
+                  <div class="mb-6">
+                    <p class="text-xs text-slate-400 mb-1">DESDE</p>
+                    <p class="text-5xl font-black text-brand-amber leading-none">
+                      ${formatPrice(displayPrecio)}
+                    </p>
+                    <p class="text-sm text-slate-400 mt-1">{monedaLabel} / persona</p>
+                  </div>
+
+                  <ul class="space-y-2 mb-8 text-left text-sm text-slate-600">
+                    {destino.data.duracion && (
+                      <li class="flex items-start gap-2">
+                        <span class="text-brand-teal mt-0.5">✓</span>
+                        {destino.data.duracion} de hospedaje
+                      </li>
+                    )}
+                    <li class="flex items-start gap-2">
+                      <span class="text-brand-teal mt-0.5">✓</span>
+                      Alimentación buffet completa
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-brand-teal mt-0.5">✓</span>
+                      Tiquetes aéreos ida y regreso
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span class="text-brand-teal mt-0.5">✓</span>
+                      Tours y experiencias incluidas
+                    </li>
+                  </ul>
+
+                  <a
+                    href={whatsappPlan(plan.estrellas, displayPrecio)}
+                    target="_blank"
+                    rel="noopener"
+                    onclick="fbq('track','Lead')"
+                    class={`block w-full py-3.5 font-black rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${
+                      plan.destacado
+                        ? 'bg-brand-teal text-white hover:brightness-110'
+                        : 'bg-brand-navy text-white hover:brightness-125'
+                    }`}
+                  >
+                    Reservar Hotel {plan.estrellas} Stars
+                  </a>
+                </div>
+              </article>
+              )
+            })}
+          </div>
+
+          <!-- Tarifas niños -->
+          {destino.data.tarifaNinos && (
+            <div class="mt-12 reveal bg-white rounded-2xl border border-slate-200 shadow-card p-6 md:p-10">
+              <h3 class="text-xl font-extrabold text-brand-navy mb-6 text-center">
+                👶 Tarifas para Niños
+              </h3>
+              <div class="grid sm:grid-cols-3 gap-4 text-center">
+                <div class="bg-slate-50 rounded-xl p-5">
+                  <p class="text-sm font-bold text-brand-navy mb-1">0 a 2 años</p>
+                  <p class="text-lg font-black text-brand-amber">{destino.data.tarifaNinos.ceroDos}</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-5">
+                  <p class="text-sm font-bold text-brand-navy mb-1">3 a 4 años</p>
+                  <p class="text-lg font-black text-brand-amber">{destino.data.tarifaNinos.tresCuatro}</p>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-5">
+                  <p class="text-sm font-bold text-brand-navy mb-1">6 años en adelante</p>
+                  <p class="text-lg font-black text-brand-amber">{destino.data.tarifaNinos.seisMas}</p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <!-- No incluye -->
+          {destino.data.noIncluye && (
+            <div class="mt-8 reveal bg-amber-50 rounded-2xl border border-amber-200 p-5 flex items-start gap-3">
+              <span class="text-xl shrink-0">⚠️</span>
+              <div>
+                <p class="font-bold text-brand-navy text-sm">No incluye:</p>
+                <p class="text-sm text-slate-600">{destino.data.noIncluye}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    <!-- D. CONTENIDO DETALLADO (Markdown) -->
+    <section id="contenido" class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="contenido-markdown">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <!-- E. CTA FINAL -->
+    <section class="py-20 bg-brand-navy">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">
+          ¿Listo para viajar a {destino.data.nombre}?
+        </h2>
+        <p class="text-slate-300 text-lg mb-8">
+          Cotiza ahora y deja tu viaje en manos de expertos
+        </p>
+        <a
+          href={whatsappURL}
+          target="_blank"
+          rel="noopener"
+          onclick="fbq('track','Lead')"
+          class="inline-flex items-center gap-3 px-10 py-5 bg-brand-teal text-white font-black text-xl rounded-full hover:brightness-110 hover:scale-105 transition-all shadow-xl"
+        >
+          <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.535 5.845L0 24l6.335-1.533C8.049 23.455 9.982 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.807 0-3.496-.487-4.951-1.335l-.355-.21-3.76.91.951-3.659-.232-.375C2.49 15.583 2 13.848 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+          Cotizar viaje ahora
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sticky CTA móvil -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-slate-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] p-3">
+    <a
+      href={whatsappURL}
+      target="_blank"
+      rel="noopener"
+      onclick="fbq('track','Lead')"
+      class="flex items-center justify-center gap-2 w-full py-3.5 bg-brand-teal text-white font-black text-base rounded-xl hover:brightness-110 transition-all"
+    >
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.535 5.845L0 24l6.335-1.533C8.049 23.455 9.982 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.807 0-3.496-.487-4.951-1.335l-.355-.21-3.76.91.951-3.659-.232-.375C2.49 15.583 2 13.848 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      </svg>
+      Cotizar desde ${formatPrice(precioDesdeDisplay)} {monedaLabel}
+    </a>
+  </div>
+
+  <Footer />
+  <WhatsAppFloat />
+</Layout>
+
+<script type="application/ld+json" set:html={jsonLd} />
+
+<style>
+  .contenido-markdown {
+    --at-dark: #0A2540;
+    --at-yellow: #F59E0B;
+    --at-red: #14b8a6;
+    --at-green: #14b8a6;
+    --at-border: #e8eaf0;
+    --at-text: #374151;
+    --at-muted: #6b7280;
+
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--at-text);
+  }
+
+  .contenido-markdown :global(h2) {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--at-dark);
+    background: #fffbeb;
+    border-left: 5px solid var(--at-yellow);
+    border-radius: 0 14px 14px 0;
+    padding: 0.8rem 1.25rem;
+    margin: 2.5rem 0 1rem;
+    line-height: 1.3;
+  }
+
+  .contenido-markdown :global(h3) {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--at-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 1.75rem 0 0.6rem;
+  }
+
+  .contenido-markdown :global(hr) {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, var(--at-yellow) 0%, transparent 80%);
+    margin: 2rem 0;
+    border-radius: 2px;
+  }
+
+  .contenido-markdown :global(p) {
+    margin: 0.4rem 0 1rem;
+    font-size: 0.96rem;
+  }
+
+  .contenido-markdown :global(strong) {
+    font-weight: 700;
+    color: var(--at-dark);
+  }
+
+  .contenido-markdown :global(em) {
+    font-style: normal;
+    font-size: 0.85rem;
+    color: var(--at-muted);
+    background: #f3f4f6;
+    padding: 0.1rem 0.4rem;
+    border-radius: 5px;
+  }
+
+  .contenido-markdown :global(ul) {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1.5rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .contenido-markdown :global(ul) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .contenido-markdown :global(ul li) {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    background: #fff;
+    border: 1.5px solid var(--at-border);
+    border-radius: 12px;
+    padding: 0.65rem 1rem;
+    font-size: 0.93rem;
+    line-height: 1.5;
+    transition:
+      border-color 0.18s,
+      box-shadow 0.18s;
+  }
+
+  .contenido-markdown :global(ul li:hover) {
+    border-color: var(--at-yellow);
+    box-shadow: 0 2px 12px 0 rgba(245, 193, 16, 0.12);
+  }
+
+  .contenido-markdown :global(ul li)::before {
+    content: '';
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    border-radius: 50%;
+    background-color: var(--at-green);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .contenido-markdown :global(p:has(> strong:only-child)) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--at-dark);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.55rem 1.4rem;
+    border-radius: 50px;
+    margin: 0.25rem 0 1.25rem;
+  }
+
+  .contenido-markdown :global(p:has(> strong:only-child) strong) {
+    color: var(--at-yellow);
+    font-size: 1.25rem;
+  }
+
+  .contenido-markdown :global(ul ul) {
+    grid-template-columns: 1fr;
+    margin: 0.4rem 0 0;
+    padding-left: 0.5rem;
+  }
+
+  .contenido-markdown :global(ul ul li) {
+    background: #f9fafb;
+    border-color: #eee;
+    font-size: 0.88rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 8px;
+  }
+
+  .contenido-markdown :global(ul ul li)::before {
+    width: 16px;
+    height: 16px;
+    background-color: #9ca3af;
+    background-size: 10px;
+  }
+</style>

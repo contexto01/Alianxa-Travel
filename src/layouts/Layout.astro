@@ -3,12 +3,14 @@ export interface Props {
   title?: string
   description?: string
   ogImage?: string
+  locale?: string
 }
 
 const {
   title = 'Alianxa Travel | Tu mundo, tu viaje — Agencia de Viajes Colombia',
   description = 'Alianxa Travel, tu agencia de viajes en Colombia. Paquetes nacionales e internacionales, experiencias personalizadas a los mejores destinos del mundo. ¡Cotiza ahora!',
-  ogImage = '/Logo.webp'
+  ogImage = '/Logo.webp',
+  locale = 'es_CO'
 } = Astro.props
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : ''
@@ -35,7 +37,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : ''
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content="es_CO" />
+    <meta property="og:locale" content={locale} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -55,7 +57,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : ''
         "@type": "TravelAgency",
         "name": "Alianxa Travel",
         "description": "Agencia de viajes que ofrece paquetes nacionales e internacionales personalizados.",
-        "url": "https://alianxatravel.com",
+        "url": "https://alianxatravel.org",
         "telephone": "+573246250212",
         "email": "reservas.alianxatravel@gmail.com",
         "address": {
