@@ -52,22 +52,8 @@ cta:
   whatsapp: 'Hola!%20Quiero%20información%20de%20la%20Súper%20Promo%20a%20Santa%20Marta%20🏖️✈️'
 ---
 
-## 🇨🇴 SÚPER PROMO SANTA MARTA 🇨🇴
-
-### 🌴 4 DÍAS · 3 NOCHES · PLAN TODO INCLUIDO
-
-🔥 **Desde USD 409 por persona** 🔥
-
 Disfruta el **Caribe colombiano como nunca antes**.  
 Santa Marta te espera con playas de ensueño, historia, diversión y experiencias únicas en un plan diseñado para que **no te preocupes por nada**.
-
----
-
-## 👶 Tarifas para niños
-
-- 👶 **0 – 2 años:** USD 54 _(seguro de vuelo obligatorio)_
-- 🧒 **3 – 4 años:** Pagan solo el **50% del plan**
-- 👦 **6 años en adelante:** Pagan tarifa completa
 
 ---
 

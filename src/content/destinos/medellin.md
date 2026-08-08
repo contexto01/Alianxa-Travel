@@ -45,21 +45,7 @@ cta:
   whatsapp: 'Hola!%20Quiero%20información%20de%20la%20Súper%20Promo%20a%20Medellín%20✈️🌸'
 ---
 
-## 🇨🇴 SÚPER PROMO MEDELLÍN 🇨🇴
-
-### 🌸 4 DÍAS · 3 NOCHES · PLAN TODO INCLUIDO
-
-🔥 **Desde USD 649 por persona** 🔥
-
 Vive **Medellín, la ciudad de la eterna primavera**, con un plan diseñado para que disfrutes sin preocupaciones. Cultura, naturaleza, café, historia y experiencias únicas te esperan en uno de los destinos más vibrantes de Colombia.
-
----
-
-## 👶 Tarifas para niños
-
-- 👶 **0 – 2 años:** USD 46 _(seguro de vuelo obligatorio)_
-- 🧒 **3 – 4 años:** Pagan solo el **50% del plan**
-- 👦 **6 años en adelante:** Pagan tarifa completa
 
 ---
 

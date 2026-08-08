@@ -33,20 +33,6 @@ cta:
   whatsapp: 'Hola! Quiero información de la promo a Punta Cana'
 ---
 
-## 🇩🇴 SÚPER PROMO PUNTA CANA
-
-### 5 DÍAS · 4 NOCHES · TODO INCLUIDO
-
-🔥 **Desde USD 880 por persona**
-
----
-
-## 👶 Tarifas niños
-
-- 0-2 años: USD 46
-- 3-4 años: pagan **50%**
-- 6+ años: tarifa completa
-
 ---
 
 ## ✅ Incluye

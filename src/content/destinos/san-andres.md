@@ -52,21 +52,7 @@ cta:
   whatsapp: 'Hola!%20Quiero%20información%20de%20la%20Súper%20Promo%20a%20San%20Andrés%20🏝️✈️'
 ---
 
-## 🇨🇴 SÚPER PROMO SAN ANDRÉS 🇨🇴
-
-### 🏝️ 5 DÍAS · 4 NOCHES · PLAN TODO INCLUIDO
-
-🔥 **Desde USD 620 por persona** 🔥
-
 Descubre **San Andrés**, el paraíso del **mar de los siete colores**. Playas de arena blanca, experiencias marinas inolvidables y diversión total en un plan diseñado para que solo te dediques a disfrutar.
-
----
-
-## 👶 Tarifas para niños
-
-- 👶 **0 – 2 años:** USD 54 _(seguro de vuelo obligatorio)_
-- 🧒 **3 – 4 años:** Pagan solo el **50% del plan**
-- 👦 **6 años en adelante:** Pagan tarifa completa
 
 ---
 

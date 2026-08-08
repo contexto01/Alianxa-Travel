@@ -39,20 +39,6 @@ cta:
   whatsapp: 'Hola! Quiero información de la promo a Cancún'
 ---
 
-## 🇲🇽 SÚPER PROMO CANCÚN
-
-### 5 DÍAS · 4 NOCHES · TODO INCLUIDO
-
-🔥 **Desde USD 799**
-
----
-
-## 👶 Tarifas niños
-
-0-2 años: USD 46  
-3-4 años: 50%  
-6+ años: tarifa completa
-
 ---
 
 ## ✅ Incluye

@@ -52,21 +52,7 @@ cta:
   whatsapp: 'Hola!%20Quiero%20información%20de%20la%20Súper%20Promo%20a%20Cartagena%20🏝️✈️'
 ---
 
-## 🇨🇴 SÚPER PROMO CARTAGENA 🇨🇴
-
-### 🏝️ 4 DÍAS · 3 NOCHES · PLAN TODO INCLUIDO
-
-🔥 **Desde USD 599 por persona** 🔥
-
 Vive la magia de **Cartagena de Indias**, la joya colonial del Caribe colombiano. Historia, playas cristalinas, vida nocturna vibrante y experiencias premium en un solo plan diseñado para disfrutar sin preocupaciones.
-
----
-
-## 👶 Tarifas para niños
-
-- 👶 **0 – 2 años:** USD 46 _(seguro de vuelo obligatorio)_
-- 🧒 **3 – 4 años:** Pagan solo el **50% del plan**
-- 👦 **6 años en adelante:** Pagan tarifa completa
 
 ---
 

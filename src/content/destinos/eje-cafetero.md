@@ -45,12 +45,6 @@ cta:
   whatsapp: 'Hola!%20Quiero%20información%20de%20la%20promo%20al%20Eje%20Cafetero'
 ---
 
-## 🇨🇴 SÚPER PROMO EJE CAFETERO
-
-### 5 DÍAS · 4 NOCHES
-
-🔥 Desde **USD 599**
-
 ---
 
 ## Incluye

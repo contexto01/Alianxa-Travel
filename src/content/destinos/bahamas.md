@@ -40,12 +40,6 @@ cta:
   whatsapp: 'Hola!%20Quiero%20información%20de%20la%20promo%20a%20Bahamas'
 ---
 
-## 🇧🇸 SÚPER PROMO BAHAMAS
-
-### 5 DÍAS · 4 NOCHES
-
-🔥 Desde **USD 718**
-
 ---
 
 ## Incluye

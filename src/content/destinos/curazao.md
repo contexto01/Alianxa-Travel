@@ -39,20 +39,6 @@ cta:
   whatsapp: 'Hola!%20Quiero%20información%20de%20la%20promo%20a%20Curazao'
 ---
 
-## 🇨🇼 SÚPER PROMO CURAZAO
-
-### 5 DÍAS · 4 NOCHES
-
-🔥 Desde **USD 699**
-
----
-
-## 👶 Tarifas niños
-
-0-2: USD 50  
-3-5: 50%  
-6+: tarifa completa
-
 ---
 
 ## 🌴 Incluye

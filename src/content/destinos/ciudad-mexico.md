@@ -33,20 +33,6 @@ cta:
   whatsapp: 'Hola! Quiero información de la promo CDMX y Cancún'
 ---
 
-## 🇲🇽 SÚPER PROMO CDMX + CANCÚN
-
-### 7 DÍAS · 6 NOCHES
-
-🔥 **Desde USD 899**
-
----
-
-## 👶 Tarifas niños
-
-0-2 años: USD 60  
-3-5 años: 50%  
-6+ años: tarifa completa
-
 ---
 
 ## ✅ Incluye

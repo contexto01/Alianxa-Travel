@@ -267,6 +267,41 @@ const seoTitle = isCOP
             })}
           </div>
 
+          <!-- Qué incluye -->
+          <div class="mt-12 reveal bg-white rounded-2xl border border-slate-200 shadow-card p-6 md:p-10">
+            <h3 class="text-xl font-extrabold text-brand-navy mb-6 text-center">
+              ✅ ¿Qué incluye tu plan?
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-3 text-sm text-slate-600">
+              {destino.data.duracion && (
+                <div class="flex items-start gap-2 bg-slate-50 rounded-xl p-3">
+                  <span class="text-brand-teal shrink-0 mt-0.5">✓</span>
+                  <span><strong>Hospedaje {destino.data.duracion}</strong></span>
+                </div>
+              )}
+              <div class="flex items-start gap-2 bg-slate-50 rounded-xl p-3">
+                <span class="text-brand-teal shrink-0 mt-0.5">✓</span>
+                <span><strong>Alimentación buffet completa</strong> (desayuno, almuerzo y cena)</span>
+              </div>
+              <div class="flex items-start gap-2 bg-slate-50 rounded-xl p-3">
+                <span class="text-brand-teal shrink-0 mt-0.5">✓</span>
+                <span><strong>Snacks y bebidas ilimitadas</strong></span>
+              </div>
+              <div class="flex items-start gap-2 bg-slate-50 rounded-xl p-3">
+                <span class="text-brand-teal shrink-0 mt-0.5">✓</span>
+                <span><strong>Impuestos hoteleros</strong> incluidos</span>
+              </div>
+              <div class="flex items-start gap-2 bg-slate-50 rounded-xl p-3">
+                <span class="text-brand-teal shrink-0 mt-0.5">✓</span>
+                <span><strong>Tiquetes aéreos</strong> ida y regreso (equipaje de mano 10 kg)</span>
+              </div>
+              <div class="flex items-start gap-2 bg-slate-50 rounded-xl p-3">
+                <span class="text-brand-teal shrink-0 mt-0.5">✓</span>
+                <span><strong>Traslados</strong> aeropuerto – hotel – aeropuerto</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Tarifas niños -->
           {destino.data.tarifaNinos && (
             <div class="mt-12 reveal bg-white rounded-2xl border border-slate-200 shadow-card p-6 md:p-10">
