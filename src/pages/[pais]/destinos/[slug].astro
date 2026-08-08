@@ -134,7 +134,7 @@ const seoTitle = isCOP
         <div class="flex flex-col items-center gap-4">
           <div class="bg-white/10 backdrop-blur rounded-2xl px-10 py-5 border border-white/20 inline-block">
             <p class="text-xs text-white/60 mb-1">DESDE</p>
-            <p class="text-6xl md:text-7xl font-black text-brand-amber leading-none">{isCOP ? '$' : '$'}{formatPrice(precioDesdeDisplay)}</p>
+            <p class="text-5xl sm:text-6xl md:text-7xl font-black text-brand-amber leading-none break-words">{isCOP ? '$' : '$'}{formatPrice(precioDesdeDisplay)}</p>
             <p class="text-sm text-white/60 mt-1">{monedaLabel} / persona</p>
           </div>
 
@@ -180,7 +180,7 @@ const seoTitle = isCOP
       <section id="planes" class="py-20 lg:py-28 bg-slate-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-14 reveal">
-            <span class="inline-block px-4 py-1.5 bg-brand-amber/20 text-amber-700 text-sm font-bold rounded-full mb-4">
+            <span class="inline-block px-5 py-2 bg-brand-amber/20 text-amber-700 text-base font-bold rounded-full mb-4">
               🏨 Elige tu plan
             </span>
             <h2 class="section-title">Planes de Alojamiento<br />Todo Incluido</h2>
@@ -221,7 +221,7 @@ const seoTitle = isCOP
 
                   <div class="mb-6">
                     <p class="text-xs text-slate-400 mb-1">DESDE</p>
-                    <p class="text-5xl font-black text-brand-amber leading-none">
+                    <p class="text-3xl sm:text-4xl md:text-5xl font-black text-brand-amber leading-none break-words">
                       ${formatPrice(displayPrecio)}
                     </p>
                     <p class="text-sm text-slate-400 mt-1">{monedaLabel} / persona</p>
