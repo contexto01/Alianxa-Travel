@@ -55,7 +55,7 @@ tours:
     descripcion: 'Parque de la Cultura Agropecuaria con experiencias interactivas de campo, naturaleza y sostenibilidad.'
     imagen: '/ejeCafeteroIMG/portada.webp'
 seo:
-  title: 'Viajes al Eje Cafetero 2025 | Plan Todo Incluido desde $1.890.000 COP'
+  title: 'Viajes al Eje Cafetero 2056 | Plan Todo Incluido desde $1.890.000 COP'
   description: 'Descubre Salento, Valle del Cocora, Termales de Santa Rosa, Parque del Café y Panaca en un plan todo incluido.'
 cta:
   texto: 'Quiero esta promo al Eje Cafetero'

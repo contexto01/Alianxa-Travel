@@ -53,7 +53,7 @@ tours:
     descripcion: 'El show nocturno más famoso de Cancún con acrobacias, música y acceso VIP incluido.'
     imagen: '/mexicoIMG/portada.webp'
 seo:
-  title: 'Viaje CDMX y Cancún 2025 | 7 días desde $2.890.000 COP'
+  title: 'Viaje CDMX y Cancún 2056 | 7 días desde $2.890.000 COP'
   description: 'Descubre Ciudad de México y Cancún en un solo viaje con tours completos.'
 cta:
   texto: 'Quiero esta promo CDMX + Cancún'

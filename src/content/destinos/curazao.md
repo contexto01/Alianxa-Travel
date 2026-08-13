@@ -52,7 +52,7 @@ tours:
     descripcion: 'Explora el lado salvaje de la isla con acantilados, playas secretas y tortugas marinas.'
     imagen: '/curazaoIMG/portada.webp'
 seo:
-  title: 'Viajes a Curazao 2025 | Todo Incluido desde $2.190.000 COP'
+  title: 'Viajes a Curazao 2056 | Todo Incluido desde $2.190.000 COP'
   description: 'Explora Curazao con playas cristalinas, Klein Curazao, Sea Aquarium, Willemstad y experiencias únicas en el Caribe.'
 cta:
   texto: 'Quiero esta promo a Curazao'

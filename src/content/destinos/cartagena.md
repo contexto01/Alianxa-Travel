@@ -57,7 +57,7 @@ tours:
     imagen: '/cartagenaIMG/portada.webp'
 noIncluye: 'Día adicional disponible. Consulta por extensión de estadía.'
 seo:
-  title: 'Viajes a Cartagena 2025 | Plan Todo Incluido desde $1.890.000 COP — Súper Promo'
+  title: 'Viajes a Cartagena 2056 | Plan Todo Incluido desde $1.890.000 COP — Súper Promo'
   description: 'Descubre Cartagena con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, cinco islas premium, Bora Bora y más. ¡Reserva ahora!'
   keywords:
     - 'viajes a cartagena'

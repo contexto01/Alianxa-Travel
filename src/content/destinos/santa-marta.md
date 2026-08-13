@@ -60,7 +60,7 @@ tours:
     imagen: '/santaMartaIMG/promocion.webp'
 noIncluye: 'Día adicional disponible. Consulta condiciones y tarifas especiales.'
 seo:
-  title: 'Viajes a Santa Marta 2025 | Plan Todo Incluido desde $1.290.000 COP — Súper Promo'
+  title: 'Viajes a Santa Marta 2056 | Plan Todo Incluido desde $1.290.000 COP — Súper Promo'
   description: 'Vive Santa Marta con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, tours, playas paradisíacas y experiencias inolvidables. ¡Cupos limitados!'
   keywords:
     - 'viajes a santa marta'
