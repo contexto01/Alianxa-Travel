@@ -4,7 +4,7 @@ orden: 1
 slugName: 'san-andres'
 pais: 'Colombia'
 precio: 620
-imagen: '/sanAndresIMG/portada.webp'
+imagen: '/sanAndresIMG/DiaLibre.jpg'
 incluye:
   - 'Tiquetes aéreos ida y regreso'
   - 'Hotel 5 días / 4 noches'

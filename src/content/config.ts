@@ -25,6 +25,7 @@ const destinosCollection = defineCollection({
     destacado: z.boolean().default(false),
     imagen: z.string(),
     imagenes: z.array(z.string()).optional(),
+    heroImages: z.array(z.string()).optional(),
     tagRegion: z.string().optional(),
     planes: z.array(z.object({
       estrellas: z.number(),
@@ -59,7 +60,11 @@ const destinosCollection = defineCollection({
     cta: z.object({
       texto: z.string().default('Cotizar viaje'),
       whatsapp: z.string()
-    })
+    }),
+    faqs: z.array(z.object({
+      pregunta: z.string(),
+      respuesta: z.string()
+    })).optional()
   })
 })
 

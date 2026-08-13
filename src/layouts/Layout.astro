@@ -14,6 +14,10 @@ const {
 } = Astro.props
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : ''
+
+const ogImageAbsolute = ogImage.startsWith('http')
+  ? ogImage
+  : new URL(ogImage, Astro.site ?? Astro.url).href
 ---
 
 <!doctype html>
@@ -36,7 +40,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : ''
     <meta property="og:site_name" content="Alianxa Travel" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={ogImageAbsolute} />
     <meta property="og:locale" content={locale} />
 
     <!-- Twitter Card -->

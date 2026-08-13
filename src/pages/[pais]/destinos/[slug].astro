@@ -23,6 +23,8 @@ type Props = {
 
 const { destino, pais } = Astro.props
 const { Content } = await destino.render()
+const heroImages = destino.data.heroImages ?? [destino.data.imagen]
+const hasHeroCarousel = heroImages.length > 1
 
 const isCOP = pais === 'co'
 
@@ -83,6 +85,31 @@ const jsonLd = JSON.stringify({
 const seoTitle = isCOP
   ? destino.data.seo.title
   : destino.data.seo.title.replace(/\$[\d.,]+\s*COP/i, `$${destino.data.precioDesde} USD`)
+
+const hasContent = !!(destino.body && destino.body.trim())
+
+const viewContentData = {
+  content_name: destino.data.nombre,
+  content_category: 'destino',
+  value: precioDesdeDisplay,
+  currency: monedaLabel
+}
+
+const faqJsonLd = destino.data.faqs && destino.data.faqs.length > 0
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: destino.data.faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.pregunta,
+        acceptedAnswer: { '@type': 'Answer', text: f.respuesta }
+      }))
+    })
+  : null
+
+function leadEventParams(plan: { estrellas: number }, displayPrecio: number): string {
+  return `fbq('track','Lead',{"content_name":"Plan Hotel ${plan.estrellas} Estrellas - ${destino.data.nombre}","content_category":"plan_alojamiento","value":${displayPrecio},"currency":"${monedaLabel}"})`
+}
 ---
 
 <Layout
@@ -99,10 +126,12 @@ const seoTitle = isCOP
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0">
         <img
+          id="destination-hero"
           src={destino.data.imagen}
           alt={`Viajes a ${destino.data.nombre}`}
           class="w-full h-full object-cover"
           fetchpriority="high"
+          data-hero-images={hasHeroCarousel ? JSON.stringify(heroImages) : undefined}
         />
         <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-brand-navy/85 to-brand-navy/90"></div>
       </div>
@@ -257,7 +286,7 @@ const seoTitle = isCOP
                     href={whatsappPlan(plan.estrellas, displayPrecio)}
                     target="_blank"
                     rel="noopener"
-                    onclick="fbq('track','Lead')"
+                    onclick={leadEventParams(plan, displayPrecio)}
                     class={`block w-full py-3.5 font-black rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg ${
                       plan.destacado
                         ? 'bg-brand-teal text-white hover:brightness-110'
@@ -395,13 +424,44 @@ const seoTitle = isCOP
     )}
 
     <!-- E. CONTENIDO DETALLADO (Markdown) -->
-    <section id="contenido" class="py-16 bg-white">
-      <div class="max-w-4xl mx-auto px-6">
-        <div class="contenido-markdown">
-          <Content />
+    {hasContent && (
+      <section id="contenido" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="contenido-markdown">
+            <Content />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    )}
+
+    {destino.data.faqs && destino.data.faqs.length > 0 && (
+      <section id="faq" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12 reveal">
+            <span class="inline-block px-5 py-2 bg-brand-teal/10 text-brand-teal text-base font-bold rounded-full mb-4">
+              ❓ Preguntas frecuentes
+            </span>
+            <h2 class="text-3xl md:text-4xl font-black text-brand-navy">
+              Resolvemos tus dudas
+            </h2>
+            <p class="text-slate-500 mt-2 text-lg">Todo lo que necesitas saber antes de reservar</p>
+          </div>
+          <div class="space-y-4">
+            {destino.data.faqs.map((faq) => (
+              <details class="reveal group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-300 hover:border-brand-teal/40">
+                <summary class="flex items-center justify-between gap-4 cursor-pointer list-none p-5 md:p-6 font-extrabold text-brand-navy text-lg">
+                  {faq.pregunta}
+                  <span class="shrink-0 w-8 h-8 rounded-full bg-brand-teal/10 text-brand-teal flex items-center justify-center text-xl font-black transition-transform duration-300 group-open:rotate-45">+</span>
+                </summary>
+                <div class="px-5 md:px-6 pb-5 md:pb-6 -mt-1 text-slate-600 leading-relaxed">
+                  {faq.respuesta}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
 
     <!-- F. BANNER CUPOS LIMITADOS -->
     <section class="py-16 bg-gradient-to-r from-brand-navy via-brand-navy to-brand-teal/20">
@@ -458,7 +518,49 @@ const seoTitle = isCOP
 
 <script type="application/ld+json" set:html={jsonLd} />
 
+{faqJsonLd && (
+  <script type="application/ld+json" set:html={faqJsonLd} />
+)}
+
+<script is:inline define:vars={{ viewContentData }}>
+  if (typeof fbq === 'function') {
+    fbq('track', 'ViewContent', viewContentData)
+  }
+</script>
+
+{hasHeroCarousel && (
+  <script>
+    const heroImage = document.querySelector<HTMLImageElement>('#destination-hero[data-hero-images]')
+
+    if (heroImage) {
+      const images = JSON.parse(heroImage.dataset.heroImages ?? '[]') as string[]
+      const firstImage = images[0]
+      const remainingImages = images.slice(1).sort(() => Math.random() - 0.5)
+      const sequence = [firstImage, ...remainingImages]
+      let currentIndex = 0
+
+      window.setInterval(() => {
+        currentIndex = (currentIndex + 1) % sequence.length
+        heroImage.classList.add('hero-image-fade')
+
+        window.setTimeout(() => {
+          heroImage.src = sequence[currentIndex]
+          heroImage.classList.remove('hero-image-fade')
+        }, 300)
+      }, 5000)
+    }
+  </script>
+)}
+
 <style>
+  #destination-hero {
+    transition: opacity 300ms ease-in-out;
+  }
+
+  #destination-hero.hero-image-fade {
+    opacity: 0;
+  }
+
   .contenido-markdown {
     --at-dark: #0A2540;
     --at-yellow: #F59E0B;
