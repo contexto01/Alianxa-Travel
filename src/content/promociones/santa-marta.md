@@ -4,7 +4,7 @@ orden: 3
 slugName: 'santa-marta'
 pais: 'Colombia'
 precio: 409
-imagen: '/santaMartaIMG/Elrodadero2.webp'
+imagen: '/santaMartaIMG/Elrodadero.webp'
 incluye:
   - 'Tiquetes aéreos ida y regreso'
   - 'Hotel 4 días / 3 noches'
