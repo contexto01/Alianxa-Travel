@@ -56,7 +56,7 @@ tours:
     descripcion: 'Snorkel en la famosa cueva de la película de James Bond con arrecifes y vida marina espectacular.'
     imagen: '/bahamaIMG/2.webp'
 seo:
-  title: 'Viajes a Bahamas 2056 | Todo Incluido desde $2.250.000 COP'
+  title: 'Viajes a Bahamas 2026 | Todo Incluido desde $2.250.000 COP'
   description: 'Disfruta Bahamas con Pink Sands Beach, Pig Beach, Atlantis, Nassau y experiencias únicas en el Caribe.'
 cta:
   texto: 'Quiero esta promo a Bahamas'

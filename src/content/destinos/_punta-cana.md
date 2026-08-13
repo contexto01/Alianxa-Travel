@@ -13,7 +13,7 @@ imagenes:
   - "https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=1200&q=85&auto=format&fit=crop"
 tagRegion: "Caribe"
 seo:
-  title: "Viajes a Punta Cana 2056 | Resorts Todo Incluido desde $1299 — Alianxa Travel"
+  title: "Viajes a Punta Cana 2026 | Resorts Todo Incluido desde $1299 — Alianxa Travel"
   description: "Punta Cana te espera. Resorts 5 estrellas todo incluido, playas paradisíacas y actividades ilimitadas. Paquetes desde Colombia con Alianxa Travel. ¡Reserva ya!"
   keywords:
     - "viajes punta cana"

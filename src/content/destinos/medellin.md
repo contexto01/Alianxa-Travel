@@ -53,7 +53,7 @@ tours:
     descripcion: 'Arte urbano, historia y transformación social en uno de los barrios más inspiradores del mundo.'
     imagen: '/medellinIMG/promocion.webp'
 seo:
-  title: 'Viajes a Medellín 2056 | Plan Todo Incluido desde $2.090.000 COP — Súper Promo'
+  title: 'Viajes a Medellín 2026 | Plan Todo Incluido desde $2.090.000 COP — Súper Promo'
   description: 'Descubre Medellín con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, tours, Hacienda Nápoles, Guatapé y más. ¡Reserva ahora!'
   keywords:
     - 'viajes a medellin'

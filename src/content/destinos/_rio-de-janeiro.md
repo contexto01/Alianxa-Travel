@@ -13,7 +13,7 @@ imagenes:
   - "https://images.unsplash.com/photo-1548963670-aaaa8f73a5e3?w=1200&q=85&auto=format&fit=crop"
 tagRegion: "Sudamérica"
 seo:
-  title: "Viajes a Río de Janeiro 2056 | Paquetes desde $1199 — Alianxa Travel"
+  title: "Viajes a Río de Janeiro 2026 | Paquetes desde $1199 — Alianxa Travel"
   description: "Conoce Río de Janeiro: Cristo Redentor, Copacabana, Pan de Azúcar. Paquetes con vuelo, hotel y tours desde Colombia. ¡La Ciudad Maravillosa te espera!"
   keywords:
     - "viajes rio de janeiro"

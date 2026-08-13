@@ -53,7 +53,7 @@ tours:
     descripcion: 'Nada con delfines en un encuentro guiado en las aguas cristalinas de la Riviera Maya.'
     imagen: '/cancunIMG/2.webp'
 seo:
-  title: 'Viajes a Cancún 2056 | Todo Incluido desde $2.490.000 COP'
+  title: 'Viajes a Cancún 2026 | Todo Incluido desde $2.490.000 COP'
   description: 'Disfruta Cancún con tours a Xcaret, Chichén Itzá, Cozumel y más.'
 cta:
   texto: 'Quiero esta promo a Cancún'

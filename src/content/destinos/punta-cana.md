@@ -44,7 +44,7 @@ tours:
     descripcion: 'El show más espectacular del Caribe con acrobacias, música en vivo y acceso VIP.'
     imagen: '/puntaCanaIMG/portada.webp'
 seo:
-  title: 'Viajes a Punta Cana 2056 | Todo Incluido desde $2.790.000 COP'
+  title: 'Viajes a Punta Cana 2026 | Todo Incluido desde $2.790.000 COP'
   description: 'Disfruta Punta Cana con plan todo incluido, hotel 5 estrellas, Isla Saona, Scape Park, Coco Bongo y más.'
 cta:
   texto: 'Quiero esta promo a Punta Cana'
