@@ -3,7 +3,7 @@ nombre: 'Santa Marta'
 orden: 3
 slugName: 'santa-marta'
 pais: 'Colombia'
-precio: 409
+precio: 500
 imagen: '/santaMartaIMG/Elrodadero.webp'
 incluye:
   - 'Tiquetes aéreos ida y regreso'
@@ -13,7 +13,7 @@ incluye:
   - 'Traslados aeropuerto – hotel'
 badge: 'Caribe Colombiano'
 badgeColor: 'bg-orange-600'
-whatsapp: 'Quiero%20el%20paquete%20a%20Santa%20Marta%20desde%20%24409%20USD'
+whatsapp: 'Quiero%20el%20paquete%20a%20Santa%20Marta%20desde%20%24500%20USD'
 destacada: true
 ---
 

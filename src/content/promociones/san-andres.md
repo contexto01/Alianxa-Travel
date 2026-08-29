@@ -3,7 +3,7 @@ nombre: 'San Andrés'
 orden: 1
 slugName: 'san-andres'
 pais: 'Colombia'
-precio: 620
+precio: 705
 imagen: '/sanAndresIMG/DiaLibre.jpg'
 incluye:
   - 'Tiquetes aéreos ida y regreso'
@@ -13,7 +13,7 @@ incluye:
   - 'Traslados aeropuerto – hotel'
 badge: 'Caribe Colombiano'
 badgeColor: 'bg-blue-600'
-whatsapp: 'Quiero%20el%20paquete%20a%20San%20Andrés%20desde%20%24620%20USD'
+whatsapp: 'Quiero%20el%20paquete%20a%20San%20Andrés%20desde%20%24705%20USD'
 destacada: true
 ---
 

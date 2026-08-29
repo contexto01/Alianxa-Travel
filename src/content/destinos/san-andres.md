@@ -4,8 +4,8 @@ pais: 'Colombia'
 region: 'caribe'
 duracion: '5 Días / 4 Noches'
 descripcion: 'El mar de los siete colores, playas de arena blanca y aventuras únicas en un plan todo incluido en el Caribe colombiano.'
-precioDesde: 620
-precioDesdeCOP: 1990000
+precioDesde: 705
+precioDesdeCOP: 1599900
 moneda: 'USD'
 destacado: true
 imagen: '/sanAndresIMG/DiaLibre.jpg'
@@ -30,20 +30,20 @@ heroImages:
 tagRegion: 'Caribe Colombiano'
 planes:
   - estrellas: 3
-    precio: 620
-    precioCOP: 1990000
+    precio: 705
+    precioCOP: 1599900
     label: 'Económico'
     tag: 'Ideal para viajeros prácticos'
     destacado: false
   - estrellas: 4
-    precio: 690
-    precioCOP: 2190000
+    precio: 720
+    precioCOP: 1899900
     label: 'Recomendado'
     tag: '🔥 MÁS POPULAR'
     destacado: true
   - estrellas: 5
     precio: 750
-    precioCOP: 2390000
+    precioCOP: 2199000
     label: 'Premium'
     tag: 'Experiencia de Lujo'
     destacado: false
@@ -74,7 +74,7 @@ tours:
     imagen: '/sanAndresIMG/DiaLibre.jpg'
 noIncluye: 'Tarjeta de turismo de ingreso a la isla: USD $48 por pasajero (se paga en el aeropuerto).'
 seo:
-  title: 'Viajes a San Andrés 2026 | Plan Todo Incluido desde $1.990.000 COP — Súper Promo'
+  title: 'Viajes a San Andrés 2026 | Plan Todo Incluido desde $1.599.900 COP — Súper Promo'
   description: 'Vive San Andrés con un plan todo incluido de 5 días y 4 noches. Vuelos, hotel, tours marinos, catamarán, Johnny Cay y más. ¡Reserva ahora!'
   keywords:
     - 'viajes a san andres'

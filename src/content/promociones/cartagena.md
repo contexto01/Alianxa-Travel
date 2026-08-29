@@ -3,7 +3,7 @@ nombre: 'Cartagena'
 orden: 4
 slugName: 'cartagena'
 pais: 'Colombia'
-precio: 599
+precio: 549
 imagen: '/cartagenaIMG/portada.webp'
 incluye:
   - 'Tiquetes aéreos ida y regreso'
@@ -13,7 +13,7 @@ incluye:
   - 'Traslados aeropuerto – hotel'
 badge: 'Caribe Colombiano'
 badgeColor: 'bg-yellow-600'
-whatsapp: 'Quiero%20el%20paquete%20a%20Cartagena%20desde%20%24599%20USD'
+whatsapp: 'Quiero%20el%20paquete%20a%20Cartagena%20desde%20%24549%20USD'
 destacada: true
 ---
 

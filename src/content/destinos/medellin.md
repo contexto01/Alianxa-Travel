@@ -5,7 +5,7 @@ region: 'sudamerica'
 duracion: '4 Días / 3 Noches'
 descripcion: 'La ciudad de la eterna primavera te espera con cultura, café, innovación y experiencias únicas en un plan todo incluido.'
 precioDesde: 649
-precioDesdeCOP: 2090000
+precioDesdeCOP: 1299000
 moneda: 'USD'
 destacado: true
 imagen: '/medellinIMG/peñol.webp'
@@ -30,13 +30,13 @@ tagRegion: 'Colombia'
 planes:
   - estrellas: 4
     precio: 649
-    precioCOP: 2090000
+    precioCOP: 1299000
     label: 'Recomendado'
     tag: '🔥 MÁS POPULAR'
     destacado: true
   - estrellas: 5
     precio: 699
-    precioCOP: 2290000
+    precioCOP: 1599000
     label: 'Premium'
     tag: 'Experiencia de Lujo'
     destacado: false
@@ -66,7 +66,7 @@ tours:
     descripcion: 'Arte urbano, historia y transformación social en uno de los barrios más inspiradores del mundo.'
     imagen: '/medellinIMG/comuna13Medellin.webp'
 seo:
-  title: 'Viajes a Medellín 2026 | Plan Todo Incluido desde $2.090.000 COP — Súper Promo'
+  title: 'Viajes a Medellín 2026 | Plan Todo Incluido desde $1.299.000 COP — Súper Promo'
   description: 'Descubre Medellín con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, tours, Hacienda Nápoles, Guatapé y más. ¡Reserva ahora!'
   keywords:
     - 'viajes a medellin'

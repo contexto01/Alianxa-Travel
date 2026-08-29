@@ -4,8 +4,8 @@ pais: 'Colombia'
 region: 'caribe'
 duracion: '4 Días / 3 Noches'
 descripcion: 'Historia, playas paradisíacas y experiencias exclusivas en la joya colonial del Caribe colombiano con plan todo incluido.'
-precioDesde: 599
-precioDesdeCOP: 1890000
+precioDesde: 549
+precioDesdeCOP: 1299900
 moneda: 'USD'
 destacado: true
 imagen: '/cartagenaIMG/portada.webp'
@@ -16,20 +16,20 @@ imagenes:
 tagRegion: 'Caribe Colombiano'
 planes:
   - estrellas: 3
-    precio: 599
-    precioCOP: 1890000
+    precio: 549
+    precioCOP: 1299900
     label: 'Económico'
     tag: 'Ideal para viajeros prácticos'
     destacado: false
   - estrellas: 4
-    precio: 679
-    precioCOP: 2150000
+    precio: 599
+    precioCOP: 1599900
     label: 'Recomendado'
     tag: '🔥 MÁS POPULAR'
     destacado: true
   - estrellas: 5
-    precio: 749
-    precioCOP: 2350000
+    precio: 619
+    precioCOP: 1899000
     label: 'Premium'
     tag: 'Experiencia de Lujo'
     destacado: false
@@ -57,7 +57,7 @@ tours:
     imagen: '/cartagenaIMG/portada.webp'
 noIncluye: 'Día adicional disponible. Consulta por extensión de estadía.'
 seo:
-  title: 'Viajes a Cartagena 2026 | Plan Todo Incluido desde $1.890.000 COP — Súper Promo'
+  title: 'Viajes a Cartagena 2026 | Plan Todo Incluido desde $1.299.900 COP — Súper Promo'
   description: 'Descubre Cartagena con un plan todo incluido de 4 días y 3 noches. Vuelos, hotel, cinco islas premium, Bora Bora y más. ¡Reserva ahora!'
   keywords:
     - 'viajes a cartagena'
