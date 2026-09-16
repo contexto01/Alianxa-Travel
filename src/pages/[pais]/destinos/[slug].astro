@@ -52,13 +52,13 @@ const whatsappBase = isCOP
   ? `Hola!%20Quiero%20información%20del%20viaje%20a%20${encodeURIComponent(destino.data.nombre)}%20desde%20%24${precioDesdeDisplay.toLocaleString('es-CO')}%20COP`
   : destino.data.cta.whatsapp
 
-const whatsappURL = `https://wa.me/573246250212?text=${whatsappBase}`
+const whatsappURL = `https://wa.me/573028349824?text=${whatsappBase}`
 
 function whatsappPlan(stars: number, precio: number) {
   const moneda = isCOP ? 'COP' : 'USD'
   const precioStr = isCOP ? `$${precio.toLocaleString('es-CO')}` : `$${precio}`
   const msg = encodeURIComponent(`Hola! Quiero información del plan Hotel ${stars} Estrellas a ${destino.data.nombre} por ${moneda} ${precioStr} 🏝️✈️`)
-  return `https://wa.me/573246250212?text=${msg}`
+  return `https://wa.me/573028349824?text=${msg}`
 }
 
 const locale = isCOP ? 'es_CO' : 'es_EC'
